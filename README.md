@@ -19,6 +19,7 @@
   </p>
 
   <p>
+    <a href="https://thrymspire.github.io/sovereignCritical/"><img src="https://img.shields.io/badge/Live%20Cockpit-GitHub%20Pages%20App-10b981?style=for-the-badge&logo=githubpages&logoColor=white" alt="Live Cockpit" /></a>
     <a href="https://github.com/thrymspire/sovereignCritical"><img src="https://img.shields.io/badge/UAF%20Student%20ID-30926621-5ffbf1?style=for-the-badge&logo=alaskaairlines&logoColor=black" alt="Student ID" /></a>
     <a href="#-academic-trajectory--degree-works-matrix-39-credits-to-graduation"><img src="https://img.shields.io/badge/Degree%20Works-81%20Applied%20%7C%2039%20Remaining-9d5cff?style=for-the-badge" alt="Degree Works" /></a>
     <a href="#-demographics-invariants--financial-architecture"><img src="https://img.shields.io/badge/Tuition%20Policy-UAF%20eCampus%20Resident%20Waiver-5ffbf1?style=for-the-badge" alt="Tuition Policy" /></a>
