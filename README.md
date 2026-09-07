@@ -1,14 +1,5 @@
 <div align="center">
-  <table border="0" style="border: none; background: transparent; margin: 0 auto;">
-    <tr style="border: none; background: transparent;">
-      <td align="center" style="border: none; padding: 12px;">
-        <img src="copilot_watermark.png" alt="Native Alaskan Formline Crest" width="180" style="border-radius: 20px; box-shadow: 0 0 35px rgba(157, 92, 255, 0.6); border: 2px solid rgba(157, 92, 255, 0.4);" />
-      </td>
-      <td align="center" style="border: none; padding: 12px;">
-        <img src="uaf_tricolor.jpg" alt="University of Alaska Fairbanks Brand Identity" width="280" style="border-radius: 14px; box-shadow: 0 0 30px rgba(95, 251, 241, 0.35); border: 2px solid rgba(95, 251, 241, 0.3);" />
-      </td>
-    </tr>
-  </table>
+  <img src="uaf_tricolor.jpg" alt="University of Alaska Fairbanks — Many Traditions One Alaska" width="100%" style="max-width: 960px; border-radius: 18px; box-shadow: 0 12px 48px rgba(95, 251, 241, 0.4), 0 0 32px rgba(157, 92, 255, 0.3); border: 2px solid rgba(95, 251, 241, 0.45); margin-bottom: 20px;" />
 
   <h1>🏛️ sovereignCritical // Jeremiah D. Stack</h1>
 
