@@ -197,7 +197,7 @@ SWIMLANE_METADATA = {
     "ws-capital-sovereignty": {
         "trackNum": "TRACK 3",
         "badge": "🛡️ BASELINE SECURED",
-        "encouragement": "Secured Baseline Assets: $14,068.00 Realized Value • Student Loan Rehab Month 9 Payment in March 2027 purges default & restores Title IV • $3,712 Bursar Gate Due Nov 1.",
+        "encouragement": "Student Loan Debt Rehabilitation: $78,429.01 ($5/mo Rehab Engine, Month 3 of 9) • March 28, 2027 exit deletes defaults & restores Title IV • Current Term Deficit: $3,712 Due Nov 1.",
         "color": "var(--bio)",
     },
     "ws-scholarships": {
@@ -209,7 +209,7 @@ SWIMLANE_METADATA = {
     "ws-housing": {
         "trackNum": "TRACK 5",
         "badge": "🏠 BASECAMP SECURED",
-        "encouragement": "Salem residential basecamp secured ($750/mo paid through Dec 31). January 1 rent bridge funded via CIRI/KIC tuition surplus.",
+        "encouragement": "Residential basecamp secured (paid through Dec 31). January 1 housing bridge funded via CIRI/KIC tuition surplus.",
         "color": "var(--bio)",
     },
     "ws-degree": {
