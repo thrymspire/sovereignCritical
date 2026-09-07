@@ -26,7 +26,7 @@
     <a href="#-track-3-capital-sovereignty-student-loan-portfolio--9-month-rehabilitation"><img src="https://img.shields.io/badge/Student%20Loan%20Rehab-Month%203%20of%209%20(%245%2Fmo)-fbbf24?style=for-the-badge" alt="Loan Rehab" /></a>
     <a href="#-federal-pell-grant-restoration-400-lifetime-eligibility-reserve"><img src="https://img.shields.io/badge/Title%20IV%20Pell%20Reserve-400%25%20LEU%20(%2429%2C580)-5ffbf1?style=for-the-badge" alt="Pell Reserve" /></a>
     <a href="#-track-4-continuous-rolling-scholarships--graduate-funding-horizon"><img src="https://img.shields.io/badge/Rolling%20Pipeline-%2481%2C790%20Actionable-c084fc?style=for-the-badge" alt="Rolling Scholarships" /></a>
-    <a href="#-basecamp-invariants-an-unshakeable-operational-foundation"><img src="https://img.shields.io/badge/Basecamp%20Security-Salem%20Rent%20Paid%20Thru%20Dec%2031-10b981?style=for-the-badge" alt="Basecamp Security" /></a>
+    <a href="#-institutional-covenants-sovereign-financial-goals--semester-gpa-milestones"><img src="https://img.shields.io/badge/Academic%20Target-Term%20GPA%204.00%20%7C%20Cum%203.85%2B-10b981?style=for-the-badge" alt="Academic Target" /></a>
     <a href="#-academic-trajectory--degree-works-matrix-39-credits-to-graduation"><img src="https://img.shields.io/badge/Commencement-Saturday%2C%20May%206%2C%202028-9d5cff?style=for-the-badge" alt="Commencement" /></a>
     <a href="#-track-2-applied-formal-ontology--enterprise-knowledge-engineering"><img src="https://img.shields.io/badge/Career%20Horizon-%24120k%2B%20Remote%20Ontologist-5ffbf1?style=for-the-badge" alt="Career Horizon" /></a>
   </p>
@@ -69,7 +69,7 @@ graph TD
 
     T1[<b>Track 1: Active Coursework</b><br/>12 Cr Fall 2026 &bull; 4.0 GPA Target]:::t1
     T2[<b>Track 2: Applied Ontology</b><br/>AMTO-v1 &bull; Knowledge Engineering Moat]:::t2
-    T3[<b>Track 3: Capital Sovereignty</b><br/>$78.4k Loan Rehab @ $5/mo &bull; Salem Basecamp]:::t3
+    T3[<b>Track 3: Capital Sovereignty</b><br/>$78.4k Loan Rehab @ $5/mo &bull; Repayment Engine]:::t3
     T4[<b>Track 4: Rolling Scholarships</b><br/>$81.8k Pipeline &bull; CIRI / KIC / T&H / Sealaska]:::t4
 
     G1{<b>Term GPA 4.00 Gate</b><br/>Fall 2026 Grades Finalized}:::gate
@@ -181,19 +181,37 @@ The scholarship strategy is organized around a **continuous rolling intake engin
 
 ---
 
-## 🛡️ Basecamp Invariants: An Unshakeable Operational Foundation
+## 🎯 Institutional Covenants, Sovereign Financial Goals & Semester GPA Milestones
 
-Before any academic or professional ambition can flourish, the physiological and physical baseline must be secure:
+The demographics and operational invariants of `sovereignCritical` are strictly structured around **actionable institutional goals, formal covenants, and verifiable academic milestones**:
 
-* 🏠 **Residential Basecamp Invariant:** 1165 High St SE, Salem, OR 97302. **Rent of $750.00 / month is paid in full through December 31, 2026.** No eviction risk; zero lease discrepancy.
-* 🥗 **Nutrition Invariant:** State of Oregon Department of Human Services (ODHS) — Oregon Trail EBT (SNAP) active case: **$298.00 / month**.
-* 📱 **Communications Invariant:** Mobile cellular voice & high-speed unlimited data service active: **$55.00 / month**.
-* 🩺 **Healthcare & Clinical Invariant:** Oregon Health Plan (OHP / Medicaid) active + comprehensive clinical care through the **Chemawa Indian Health Service Clinic** in Salem, Oregon.
-* 📜 **Tribal Citizen Lineage Invariants:** 
-  * Enrolled Citizen, Central Council of Tlingit & Haida Indian Tribes of Alaska (Tribal ID: Verified)
-  * Enrolled Tribal Citizen, Ketchikan Indian Community
-  * Direct Lineal Descendant, The CIRI Foundation & Sealaska Corporation
-* 🏢 **Commercial Enterprise Entity:** Active registration on the State of Oregon ORESTAR business registry and verified SAM.gov federal commercial contracting registry.
+### 📊 Actionable Sovereign Financial Goals
+* **Student Loan Portfolio Rehabilitation Goal:** **$78,429.01** across 13 federal Direct/FFELP loans (Weighted APR: 4.85%). Managed via an active statutory rehabilitation program at **$5.00 / month** (Month 3 of 9; final completion March 28, 2027) leading directly to complete credit bureau default deletion, NSLDS Title IV reinstatement, and full-time in-school deferment ($0.00/mo IDR under 34 CFR § 682.210).
+* **Current Term Tuition Deficit Gate:** **$3,712.00 net balance** (Fall 2026 tuition & campus fees: $4,742.00). Target resolution date: November 1, 2026 to ensure unconditional registration hold release for Spring 2027.
+* **Total Degree Tuition Liability Goal (39 Credits):** **$16,410.00** at UAF's resident distance rate ($289.00/credit).
+* **Continuous Rolling Scholarship Pipeline:** **$81,790.00** in actionable rolling endowments across Alaska Native and national foundations.
+* **Restored Federal Title IV Pell Grant Reserve:** **$29,580.00** (400% Lifetime Eligibility Used intact) unlocking post-rehabilitation across Summer 2027, Fall 2027, and Spring 2028.
+* **Post-Baccalaureate Graduate Horizon:** **$15,000 – $37,000 / year** targeting competitive tribal, merit, and NSF GRFP graduate research fellowships.
+* **Net Sovereign Funding Buffer:** **+$94,960.00** surplus (6.7× funding coverage over remaining degree liabilities).
+
+### 🏛️ Sovereign Institutional & Tribal Covenants
+* **Tribal Citizenship & Lineal Affiliations:**
+  * Enrolled Citizen, **Central Council of Tlingit & Haida Indian Tribes of Alaska (CCTHITA)** (Tribal ID: Verified)
+  * Enrolled Tribal Citizen, **Ketchikan Indian Community (KIC)**
+  * Lineal Descendant, **The CIRI Foundation (TCF)** & **Sealaska Corporation**
+* **Commercial & Enterprise Standing:**
+  * Active commercial entity on the State of Oregon ORESTAR business registry
+  * Verified federal commercial entity registration on SAM.gov
+
+### 🎓 Academic GPA Verification Matrix & Semester Unlock Gates
+Grades are direct mathematical gates that regulate transcript release, scholarship disbursements, and graduate admissions eligibility:
+
+| Semester Milestone | Term GPA Target | Cumulative Target | Critical Causal Dependencies & Renewal Unlocks |
+| :--- | :--- | :--- | :--- |
+| **Fall 2026 Milestone** (`tsk-gpa-gate-fall26`) | **4.00 Term** | **3.85+ Cum** | Unlocks official transcript release (`req-trans-01`), satisfies CIRI, KIC, and CCTHITA renewal GPA thresholds, clears registration prerequisites for Spring 2027 Senior Standing (13 cr). |
+| **Spring 2027 Milestone** (`tsk-gpa-gate-sp27`) | **4.00 Term** | **3.90+ Cum** | Reaches 94 cumulative credits; fulfills academic eligibility for Summer 2027 Pell Grant disbursement ($2,465) following March 28 rehabilitation completion; opens Fall 2027 enrollment. |
+| **Fall 2027 Milestone** (`tsk-gpa-gate-fa27`) | **4.00 Term** | **3.92+ Cum** | Reaches 107 cumulative credits; provides top-tier academic transcript for competitive NSF GRFP, Udall, and tribal graduate fellowship applications (`grad-fnd-sug-01`, `02`, `03`). |
+| **Spring 2028 Milestone** (`tsk-gpa-gate-sp28`) | **4.00 Term** | **3.95+ Cum** | Concludes 120-credit B.A. in Philosophy with **Summa Cum Laude** honors; Senior Honors Thesis (`PHIL F499`) finalized; confers Bachelor of Arts on May 6, 2028. |
 
 ---
 

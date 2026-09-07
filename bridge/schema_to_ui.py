@@ -254,15 +254,140 @@ def build_swimlanes(doc: dict) -> list[dict]:
     return result
 
 
+DEFAULT_TEMPLATE_HOURLY_BLOCKS = [
+    {
+        "code": "SUB-01",
+        "id": "base-01",
+        "laneId": "ws-housing",
+        "title": "Morning Nutrition & Physiological Prime",
+        "time": "06:30 - 07:30",
+        "startMin": 390,
+        "endMin": 450,
+        "deliverable": "High-protein nutrition logged; hydration & morning routine; mind primed for deep symbolic focus.",
+        "macro_anchor": "Maintaining physical vitality and structured daily rhythm fuels 10+ hours of analytical cognition without cognitive fatigue."
+    },
+    {
+        "code": "CAP-01",
+        "id": "base-02",
+        "laneId": "ws-capital-sovereignty",
+        "title": "Debt Defense & Student Loan Sovereignty Telemetry",
+        "time": "07:30 - 08:30",
+        "startMin": 450,
+        "endMin": 510,
+        "deliverable": "Rehab payment ledger verified ($5.00/mo DRG); zero bursar holds; daily telemetry logged.",
+        "macro_anchor": "HEA § 428F Month 3 of 9 execution. March 28, 2027 final payment permanently deletes defaults from all credit bureaus and unlocks $29,580 Pell Grant reserve."
+    },
+    {
+        "code": "ACAD-01",
+        "id": "base-03",
+        "laneId": "ws-academic",
+        "title": "Academic Deep Sprint 1: Philosophy & Legal Reasoning",
+        "time": "08:30 - 11:30",
+        "startMin": 510,
+        "endMin": 690,
+        "deliverable": "Assignment drafts and readings completed 5+ days ahead of syllabus deadlines (PHIL F102X, PLS F101).",
+        "macro_anchor": "Every deliverable completed with distinction secures the 4.00 Term GPA required for Senior Thesis honors (PHIL F499) and tribal scholarship disbursements."
+    },
+    {
+        "code": "ONT-01",
+        "id": "base-04",
+        "laneId": "ws-knowledge-eng",
+        "title": "Knowledge Engineering Sprint 1: AMTO-v1 Graph Modeling",
+        "time": "11:30 - 12:30",
+        "startMin": 690,
+        "endMin": 750,
+        "deliverable": "Valid OWL 2 classes and RDFLib Turtle triples committed to local repository branch.",
+        "macro_anchor": "Building the Applied Modal Topology Ontology (AMTO-v1). Open-source technical proof-of-work commands $120,000+ remote ontologist placement."
+    },
+    {
+        "code": "SUB-02",
+        "id": "base-05",
+        "laneId": "ws-housing",
+        "title": "Midday Reset, Wholesome Meal & Movement",
+        "time": "12:30 - 13:30",
+        "startMin": 750,
+        "endMin": 810,
+        "deliverable": "Nutritious lunch completed; 20-minute restorative outdoor walk; cognitive reset.",
+        "macro_anchor": "Predictable physical breaks prevent afternoon cognitive decline and sustain analytical endurance across concurrent tracks."
+    },
+    {
+        "code": "ACAD-02",
+        "id": "base-06",
+        "laneId": "ws-academic",
+        "title": "Academic Deep Sprint 2: Systems, Ethics & Communications",
+        "time": "13:30 - 15:30",
+        "startMin": 810,
+        "endMin": 930,
+        "deliverable": "Oral communication outline (COMM F180X) & ethics analyses (RELG F110X) staged for early submission.",
+        "macro_anchor": "Systemic and ethical frameworks directly deepen intuition for ancient and modern philosophy core courses (PHIL F351 & F352)."
+    },
+    {
+        "code": "SCHOL-01",
+        "id": "base-06b",
+        "laneId": "ws-scholarships",
+        "title": "Rolling Scholarship Dossier Execution & Portal Sprint",
+        "time": "15:30 - 16:30",
+        "startMin": 930,
+        "endMin": 990,
+        "deliverable": "Application drafted, transcript attached, or portal document submitted (CIRI, KIC, CCTHITA, AIS).",
+        "macro_anchor": "Capital Sovereignty Execution: Continuous rolling intake captures the $81,790.00 debt-free scholarship pipeline across every undergraduate semester."
+    },
+    {
+        "code": "ONT-02",
+        "id": "base-07",
+        "laneId": "ws-knowledge-eng",
+        "title": "Knowledge Engineering Sprint 2: SHACL Validation & Schemas",
+        "time": "16:30 - 17:30",
+        "startMin": 990,
+        "endMin": 1050,
+        "deliverable": "SHACL shapes validation report generated with zero constraint violations; SPARQL queries verified.",
+        "macro_anchor": "Production Readiness: Enterprise ontologists engineer constraint validation pipelines. W3C SHACL shape mastery establishes senior architect credentials."
+    },
+    {
+        "code": "SUB-03",
+        "id": "base-08",
+        "laneId": "ws-housing",
+        "title": "Evening Household Operations & Workstation Calibration",
+        "time": "17:30 - 18:30",
+        "startMin": 1050,
+        "endMin": 1110,
+        "deliverable": "Dinner prepared; workstation reset and clean for tomorrow's execution.",
+        "macro_anchor": "Domestic discipline eliminates decision fatigue, safeguarding peak mental focus for philosophical reasoning and technical modeling."
+    },
+    {
+        "code": "SYN-01",
+        "id": "base-09",
+        "laneId": "ws-synthesis",
+        "title": "Cognitive Synthesis: Spaced Repetition & Thesis Reading",
+        "time": "18:30 - 20:30",
+        "startMin": 1110,
+        "endMin": 1230,
+        "deliverable": "Zero card backlog in Anki; formal metaphysics/logic paper annotated; vocabulary consolidated.",
+        "macro_anchor": "Long-Term Epistemic Retention: Converting today's short-term insights into durable knowledge graphs for capstone defense (PHIL F471) and thesis (PHIL F499)."
+    },
+    {
+        "code": "SYN-02",
+        "id": "base-10",
+        "laneId": "ws-synthesis",
+        "title": "Macro Strategic Horizon Review & Evening Wind-Down",
+        "time": "20:30 - 22:30",
+        "startMin": 1230,
+        "endMin": 1350,
+        "deliverable": "Daily proof-of-work saved; priorities aligned for tomorrow; restorative rest initiated.",
+        "macro_anchor": "Macro Strategic Perspective: 81 credits completed, 39 credits from UAF B.A., debt rehabilitation on track, full tuition covered. Trust the critical path."
+    }
+]
+
+
 def build_hourly_blocks(doc: dict) -> list[dict]:
     """
     Extract hourly blocks strictly from doc if defined in configuration or calendars.
-    If none are present, returns an empty list.
+    If none are present, returns the authoritative 11 foundational hourly blocks.
     """
     cfg = doc.get("configuration") or {}
-    if "hourlyBlocks" in cfg and isinstance(cfg["hourlyBlocks"], list):
+    if "hourlyBlocks" in cfg and isinstance(cfg["hourlyBlocks"], list) and len(cfg["hourlyBlocks"]) > 0:
         return cfg["hourlyBlocks"]
-    return []
+    return DEFAULT_TEMPLATE_HOURLY_BLOCKS
 
 
 def get_demographics_dict(doc: dict) -> dict:
