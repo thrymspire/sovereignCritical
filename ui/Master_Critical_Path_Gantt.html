@@ -1325,10 +1325,10 @@ html, body {
   min-height: 0;
   overflow-y: auto;
   overflow-x: hidden;
-  padding: 16px 24px 80px 24px;
+  padding: 12px 20px 80px 20px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px;
 }
 
 /* Day Navigation Bar */
@@ -1381,16 +1381,20 @@ html, body {
 
 /* Sticky Macro Strategic Alignment Console */
 .macro-console {
-  background: linear-gradient(135deg, rgba(27, 12, 51, 0.85), rgba(14, 6, 26, 0.92));
-  border: 1px solid var(--panel-border-bright);
-  border-radius: 16px;
-  padding: 18px 24px;
+  background: linear-gradient(135deg, rgba(20, 8, 40, 0.98), rgba(10, 4, 20, 0.99));
+  border: 1px solid var(--bio);
+  border-radius: 14px;
+  padding: 14px 20px;
   display: grid;
-  grid-template-columns: 1fr 1.6fr 1fr;
-  gap: 20px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6), 0 0 24px var(--signal-glow);
-  position: relative;
-  overflow: hidden;
+  grid-template-columns: minmax(300px, 1.15fr) minmax(360px, 1.5fr) minmax(320px, 1.15fr);
+  gap: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7), 0 0 24px var(--bio-glow);
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  overflow: visible;
 }
 
 .macro-console::before {
@@ -3305,6 +3309,70 @@ html, body {
         </div>
       </div>
 
+      <!-- Sticky Macro Strategic Alignment Console -->
+      <div class="macro-console" id="macroConsoleBar" style="position: sticky; top: 0; z-index: 40; background: linear-gradient(135deg, rgba(20, 8, 40, 0.98), rgba(10, 4, 20, 0.99)); border: 1px solid rgba(95, 251, 241, 0.55); border-radius: 14px; padding: 14px 20px; display: grid; grid-template-columns: minmax(300px, 1.15fr) minmax(360px, 1.5fr) minmax(320px, 1.15fr); gap: 16px; box-shadow: 0 10px 32px rgba(0, 0, 0, 0.8), 0 0 24px rgba(95, 251, 241, 0.25); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); overflow: visible; margin-bottom: 18px;">
+        <!-- Glowing Accent Indicator -->
+        <div style="position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--bio); box-shadow: 0 0 14px var(--bio-glow);"></div>
+        
+        <!-- Spotlight Card: CURRENT EXECUTION FOCUS -->
+        <div class="active-focus-card" style="display: flex; flex-direction: column; justify-content: space-between; gap: 8px;">
+          <div>
+            <div class="console-card-header" style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+              <span class="concurrency-pulse-beacon" style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--bio); box-shadow: 0 0 10px var(--bio);"></span>
+              <span style="font-family: var(--font-mono); font-size: 11px; font-weight: 800; color: var(--bio); letter-spacing: 0.08em; text-transform: uppercase;">⚡ CURRENT EXECUTION FOCUS</span>
+            </div>
+            <div class="active-block-title" id="activeBlockTitle" style="font-size: 16px; font-weight: 800; color: #ffffff; letter-spacing: 0.01em; line-height: 1.3;">Academic Deep Sprint 1</div>
+            <div class="active-block-time" style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin-top: 4px;">
+              <span id="activeBlockTimeSpan" style="font-family: var(--font-mono); font-size: 12px; font-weight: 700; color: var(--bio); background: rgba(95, 251, 241, 0.12); border: 1px solid rgba(95, 251, 241, 0.3); padding: 2px 8px; border-radius: 12px;">08:30 – 11:30</span>
+              <span style="color: var(--ink-dim);">&bull;</span>
+              <span id="activeBlockTrack" style="color: var(--spore); font-family: var(--font-mono); font-size: 11px; font-weight: 700;">TRACK 1: Academic Degree Works Core</span>
+            </div>
+            <div id="activeBlockDeliverable" style="font-size: 11.5px; color: var(--ink-dim); margin-top: 6px; line-height: 1.4;">
+              Assignment drafts &amp; readings completed 5+ days ahead of syllabus deadlines (PHIL F102X, PLS F101).
+            </div>
+          </div>
+          <div style="margin-top: 8px; display: flex; align-items: center; justify-content: space-between;">
+            <span class="tele-chip bio-badge" id="activeBlockStatusBadge" style="font-size: 10px; font-weight: 800; padding: 3px 10px;">ACTIVE IN-FLIGHT SPRINT</span>
+            <span style="font-size: 10px; color: var(--ink-dim); font-family: var(--font-mono);" id="activeBlockDurationLabel">180 min duration</span>
+          </div>
+        </div>
+
+        <!-- Macro Strategic Anchor Box -->
+        <div class="macro-anchor-box" style="background: rgba(10, 5, 18, 0.75); border: 1px solid rgba(95, 251, 241, 0.35); border-radius: 12px; padding: 14px 18px; display: flex; flex-direction: column; justify-content: space-between; gap: 6px; box-shadow: inset 0 0 24px rgba(95, 251, 241, 0.05);">
+          <div>
+            <div class="anchor-box-header" style="font-family: var(--font-mono); font-size: 10.5px; color: var(--bio); font-weight: 800; letter-spacing: 0.06em; display: flex; align-items: center; gap: 6px;">
+              <span>🧠 BIG-PICTURE STRATEGIC ALIGNMENT &amp; 4.00 HONORS ANCHOR</span>
+            </div>
+            <div class="anchor-box-text" id="activeMacroAnchorText" style="font-size: 12px; line-height: 1.55; color: var(--ink); font-style: italic; margin-top: 6px;">
+              "Every deliverable completed with distinction secures the 4.00 Term GPA required for Senior Thesis honors (PHIL F499) and unlocks official transcript release for CIRI, KIC, and CCTHITA tribal scholarship renewals."
+            </div>
+          </div>
+          <div style="font-family: var(--font-mono); font-size: 10px; color: var(--spore); display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(157, 92, 255, 0.2); padding-top: 6px; margin-top: 4px;">
+            <span>Degree Target: <strong>39 Remaining Credits</strong></span>
+            <span>Honors Defense: <strong style="color: var(--bio);">4.00 Term / 3.85+ Overall</strong></span>
+          </div>
+        </div>
+
+        <!-- Real-Time Accrual & Living Invariants Ticker: DAILY HALF-CENT TELEMETRY -->
+        <div class="accrual-ticker-card" style="display: flex; flex-direction: column; justify-content: space-between; gap: 8px;">
+          <div class="console-card-header" style="display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-family: var(--font-mono); font-size: 11px; font-weight: 800; color: var(--warn); letter-spacing: 0.08em; text-transform: uppercase;">💰 DAILY HALF-CENT TELEMETRY</span>
+            <span class="tele-chip" style="font-size: 9px; padding: 1px 7px; background: rgba(255, 107, 129, 0.15); border: 1px solid var(--warn); color: var(--warn); font-family: var(--font-mono); font-weight: 700;">● LIVE ACCRUAL</span>
+          </div>
+          <div class="interest-ticker-box" style="background: rgba(255, 107, 129, 0.08); border: 1px solid rgba(255, 107, 129, 0.35); border-radius: 10px; padding: 10px 14px; display: flex; flex-direction: column; gap: 3px;">
+            <div class="ticker-rate-line" style="word-break: break-word; overflow-wrap: break-word;" id="liveInterestTickerVal" style="font-family: var(--font-mono); font-size: 16px; font-weight: 800; color: var(--warn); letter-spacing: 0.03em;">Accrued Today: $1.554</div>
+            <div class="ticker-subtext" style="word-break: break-word; overflow-wrap: break-word;" style="font-family: var(--font-mono); font-size: 10.5px; color: var(--ink-dim);">Rate: $2.455 / day ($0.0000284/sec) &bull; APR: 4.85% (13 Loans)</div>
+            <div class="ticker-subtext" style="word-break: break-word; overflow-wrap: break-word;" style="color: var(--bio); font-weight: 700; font-size: 10.5px; margin-top: 3px; display: flex; align-items: center; gap: 4px;">
+              <span>🛡️ Neutralized by: $5.00/mo DRG Rehab Engine (Month 3 of 9)</span>
+            </div>
+          </div>
+          <div style="font-family: var(--font-mono); font-size: 10px; color: var(--ink-dim); display: flex; justify-content: space-between; align-items: center; padding: 2px 4px;">
+            <span>Exit Gate: <strong style="color: var(--bio);">March 28, 2027</strong></span>
+            <span>Title IV Pell Reserve: <strong style="color: var(--spore);">$29,580.00</strong></span>
+          </div>
+        </div>
+      </div>
+
       <!-- Sovereign Multi-Track Concurrency Command Console -->
       <div class="all-track-concurrency-console" id="allTrackConcurrencyConsole">
         <div class="concurrency-console-header">
@@ -3411,70 +3479,6 @@ html, body {
           <span class="concurrency-footer-text">
             <strong>PROOF OF CONCURRENT MASTERY:</strong> You are taking on ALL 9 tracks at once. Basecamp invariants (housing &amp; food) are bulletproof shields. Active coursework and knowledge engineering are advancing side-by-side today. Tribal scholarships are actively captured to fund upcoming pre-engineered semesters through May 6, 2028 graduation.
           </span>
-        </div>
-      </div>
-
-      <!-- Sticky Macro Strategic Alignment Console -->
-      <div class="macro-console" style="background: linear-gradient(135deg, rgba(22, 9, 44, 0.96), rgba(10, 4, 20, 0.98)); border: 1px solid rgba(95, 251, 241, 0.45); border-radius: 16px; padding: 18px 24px; display: grid; grid-template-columns: 1.15fr 1.6fr 1.1fr; gap: 22px; box-shadow: 0 10px 36px rgba(0, 0, 0, 0.7), 0 0 28px rgba(157, 92, 255, 0.25); position: relative; overflow: hidden; margin-bottom: 20px;">
-        <!-- Glowing Accent Indicator -->
-        <div style="position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--bio); box-shadow: 0 0 14px var(--bio-glow);"></div>
-        
-        <!-- Spotlight Card: CURRENT EXECUTION FOCUS -->
-        <div class="active-focus-card" style="display: flex; flex-direction: column; justify-content: space-between; gap: 8px;">
-          <div>
-            <div class="console-card-header" style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
-              <span class="concurrency-pulse-beacon" style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--bio); box-shadow: 0 0 10px var(--bio);"></span>
-              <span style="font-family: var(--font-mono); font-size: 11px; font-weight: 800; color: var(--bio); letter-spacing: 0.08em; text-transform: uppercase;">⚡ CURRENT EXECUTION FOCUS</span>
-            </div>
-            <div class="active-block-title" id="activeBlockTitle" style="font-size: 16px; font-weight: 800; color: #ffffff; letter-spacing: 0.01em; line-height: 1.3;">Academic Deep Sprint 1</div>
-            <div class="active-block-time" style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin-top: 4px;">
-              <span id="activeBlockTimeSpan" style="font-family: var(--font-mono); font-size: 12px; font-weight: 700; color: var(--bio); background: rgba(95, 251, 241, 0.12); border: 1px solid rgba(95, 251, 241, 0.3); padding: 2px 8px; border-radius: 12px;">08:30 – 11:30</span>
-              <span style="color: var(--ink-dim);">&bull;</span>
-              <span id="activeBlockTrack" style="color: var(--spore); font-family: var(--font-mono); font-size: 11px; font-weight: 700;">TRACK 1: Academic Degree Works Core</span>
-            </div>
-            <div id="activeBlockDeliverable" style="font-size: 11.5px; color: var(--ink-dim); margin-top: 6px; line-height: 1.4;">
-              Assignment drafts &amp; readings completed 5+ days ahead of syllabus deadlines (PHIL F102X, PLS F101).
-            </div>
-          </div>
-          <div style="margin-top: 8px; display: flex; align-items: center; justify-content: space-between;">
-            <span class="tele-chip bio-badge" id="activeBlockStatusBadge" style="font-size: 10px; font-weight: 800; padding: 3px 10px;">ACTIVE IN-FLIGHT SPRINT</span>
-            <span style="font-size: 10px; color: var(--ink-dim); font-family: var(--font-mono);" id="activeBlockDurationLabel">180 min duration</span>
-          </div>
-        </div>
-
-        <!-- Macro Strategic Anchor Box -->
-        <div class="macro-anchor-box" style="background: rgba(10, 5, 18, 0.75); border: 1px solid rgba(95, 251, 241, 0.35); border-radius: 12px; padding: 14px 18px; display: flex; flex-direction: column; justify-content: space-between; gap: 6px; box-shadow: inset 0 0 24px rgba(95, 251, 241, 0.05);">
-          <div>
-            <div class="anchor-box-header" style="font-family: var(--font-mono); font-size: 10.5px; color: var(--bio); font-weight: 800; letter-spacing: 0.06em; display: flex; align-items: center; gap: 6px;">
-              <span>🧠 BIG-PICTURE STRATEGIC ALIGNMENT &amp; 4.00 HONORS ANCHOR</span>
-            </div>
-            <div class="anchor-box-text" id="activeMacroAnchorText" style="font-size: 12px; line-height: 1.55; color: var(--ink); font-style: italic; margin-top: 6px;">
-              "Every deliverable completed with distinction secures the 4.00 Term GPA required for Senior Thesis honors (PHIL F499) and unlocks official transcript release for CIRI, KIC, and CCTHITA tribal scholarship renewals."
-            </div>
-          </div>
-          <div style="font-family: var(--font-mono); font-size: 10px; color: var(--spore); display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(157, 92, 255, 0.2); padding-top: 6px; margin-top: 4px;">
-            <span>Degree Target: <strong>39 Remaining Credits</strong></span>
-            <span>Honors Defense: <strong style="color: var(--bio);">4.00 Term / 3.85+ Overall</strong></span>
-          </div>
-        </div>
-
-        <!-- Real-Time Accrual & Living Invariants Ticker: DAILY HALF-CENT TELEMETRY -->
-        <div class="accrual-ticker-card" style="display: flex; flex-direction: column; justify-content: space-between; gap: 8px;">
-          <div class="console-card-header" style="display: flex; justify-content: space-between; align-items: center;">
-            <span style="font-family: var(--font-mono); font-size: 11px; font-weight: 800; color: var(--warn); letter-spacing: 0.08em; text-transform: uppercase;">💰 DAILY HALF-CENT TELEMETRY</span>
-            <span class="tele-chip" style="font-size: 9px; padding: 1px 7px; background: rgba(255, 107, 129, 0.15); border: 1px solid var(--warn); color: var(--warn); font-family: var(--font-mono); font-weight: 700;">● LIVE ACCRUAL</span>
-          </div>
-          <div class="interest-ticker-box" style="background: rgba(255, 107, 129, 0.08); border: 1px solid rgba(255, 107, 129, 0.35); border-radius: 10px; padding: 10px 14px; display: flex; flex-direction: column; gap: 3px;">
-            <div class="ticker-rate-line" id="liveInterestTickerVal" style="font-family: var(--font-mono); font-size: 16px; font-weight: 800; color: var(--warn); letter-spacing: 0.03em;">Accrued Today: $1.554</div>
-            <div class="ticker-subtext" style="font-family: var(--font-mono); font-size: 10.5px; color: var(--ink-dim);">Rate: $2.455 / day ($0.0000284/sec) &bull; APR: 4.85% (13 Loans)</div>
-            <div class="ticker-subtext" style="color: var(--bio); font-weight: 700; font-size: 10.5px; margin-top: 3px; display: flex; align-items: center; gap: 4px;">
-              <span>🛡️ Neutralized by: $5.00/mo DRG Rehab Engine (Month 3 of 9)</span>
-            </div>
-          </div>
-          <div style="font-family: var(--font-mono); font-size: 10px; color: var(--ink-dim); display: flex; justify-content: space-between; align-items: center; padding: 2px 4px;">
-            <span>Exit Gate: <strong style="color: var(--bio);">March 28, 2027</strong></span>
-            <span>Title IV Pell Reserve: <strong style="color: var(--spore);">$29,580.00</strong></span>
-          </div>
         </div>
       </div>
 
@@ -3675,8 +3679,8 @@ html, body {
 
           <!-- Accrual & Basecamp Invariant Box -->
           <div class="accrual-ticker-card" style="padding: 10px; background: rgba(14, 6, 26, 0.7); border: 1px solid rgba(255, 107, 129, 0.3); border-radius: 10px;">
-            <div class="ticker-rate-line" id="popoutLiveInterestVal" style="font-size: 13px; font-weight: 800; color: var(--warn); font-family: var(--font-mono);">Accrued Today: $1.554</div>
-            <div class="ticker-subtext" style="color: var(--bio); font-size: 10px; font-weight: 700; margin-top: 2px;">🛡️ Neutralized by: $5.00/mo DRG Rehab Engine</div>
+            <div class="ticker-rate-line" style="word-break: break-word; overflow-wrap: break-word;" id="popoutLiveInterestVal" style="font-size: 13px; font-weight: 800; color: var(--warn); font-family: var(--font-mono);">Accrued Today: $1.554</div>
+            <div class="ticker-subtext" style="word-break: break-word; overflow-wrap: break-word;" style="color: var(--bio); font-size: 10px; font-weight: 700; margin-top: 2px;">🛡️ Neutralized by: $5.00/mo DRG Rehab Engine</div>
             <div style="font-size: 9.5px; color: var(--spore); font-family: var(--font-mono); margin-top: 4px;">
               Exit Gate: <strong>March 28, 2027</strong> &bull; Pell Reserve: <strong>$29,580.00</strong>
             </div>
