@@ -1,0 +1,21 @@
+# Environments & dependencies
+.venv/
+env/
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Temporary and local IDE artifacts
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+tmp/
+scratch/
+
+*.egg-info/
+build/
+dist/

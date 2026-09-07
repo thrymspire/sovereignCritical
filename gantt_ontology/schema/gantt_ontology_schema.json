@@ -1,0 +1,987 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sovereigncritical.local/schemas/gantt-ontology/v1",
+  "title": "Gantt Ontology Canonical Schema",
+  "description": "Canonical model for parameterized Gantt charts. Covers Task/Activity, Dependency, Resource, Structural Layout (Swimlane/Track/Boundary), Visual/Rendering, Scheduling Engine, and Ontology/Metadata parameters. Designed for normalization, schema mapping, canonicalization, and later ontology alignment.",
+  "type": "object",
+  "required": [
+    "meta",
+    "project"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "meta": {
+      "$ref": "#/$defs/Meta"
+    },
+    "project": {
+      "$ref": "#/$defs/Project"
+    },
+    "calendars": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Calendar"
+      }
+    },
+    "resources": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Resource"
+      }
+    },
+    "workstreams": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Workstream"
+      }
+    },
+    "tasks": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Task"
+      }
+    },
+    "dependencies": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Dependency"
+      }
+    },
+    "baselines": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Baseline"
+      }
+    },
+    "boundaries": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Boundary"
+      }
+    },
+    "configuration": {
+      "$ref": "#/$defs/ConfigurationProfile"
+    },
+    "demographics": {
+      "$ref": "#/$defs/DemographicsProfile"
+    }
+  },
+  "$defs": {
+    "Meta": {
+      "type": "object",
+      "required": [
+        "schemaVersion",
+        "createdAt"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "schemaVersion": {
+          "type": "string",
+          "const": "1.0.0"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "tenantId": {
+          "type": "string"
+        },
+        "parameterSetId": {
+          "type": "string"
+        },
+        "dataDictionaryVersion": {
+          "type": "string"
+        },
+        "validationRulesVersion": {
+          "type": "string"
+        }
+      }
+    },
+    "Project": {
+      "type": "object",
+      "required": [
+        "id",
+        "name"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "startDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "finishDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "calendarId": {
+          "type": "string"
+        },
+        "schedulingMode": {
+          "type": "string",
+          "enum": [
+            "Auto",
+            "Manual",
+            "Hybrid"
+          ]
+        },
+        "priority": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1000
+        },
+        "wbsRoot": {
+          "type": "string"
+        }
+      }
+    },
+    "Calendar": {
+      "type": "object",
+      "required": [
+        "id",
+        "name"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "workingTime": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "dayOfWeek": {
+                "type": "string",
+                "enum": [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday",
+                  "Saturday",
+                  "Sunday"
+                ]
+              },
+              "start": {
+                "type": "string",
+                "pattern": "^([01]\\d|2[0-3]):[0-5]\\d$"
+              },
+              "end": {
+                "type": "string",
+                "pattern": "^([01]\\d|2[0-3]):[0-5]\\d$"
+              }
+            },
+            "required": [
+              "dayOfWeek",
+              "start",
+              "end"
+            ]
+          }
+        },
+        "nonWorkingTime": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "date": {
+                "type": "string",
+                "format": "date"
+              },
+              "name": {
+                "type": "string"
+              },
+              "isHoliday": {
+                "type": "boolean"
+              }
+            }
+          }
+        },
+        "resourceCalendar": {
+          "type": "boolean",
+          "default": false
+        },
+        "taskCalendar": {
+          "type": "boolean",
+          "default": false
+        }
+      }
+    },
+    "Resource": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "type"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "Work",
+            "Material",
+            "Cost"
+          ]
+        },
+        "resourcePool": {
+          "type": "string"
+        },
+        "calendarId": {
+          "type": "string"
+        },
+        "availability": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "from": {
+                "type": "string",
+                "format": "date"
+              },
+              "to": {
+                "type": "string",
+                "format": "date"
+              },
+              "units": {
+                "type": "number",
+                "minimum": 0
+              }
+            }
+          }
+        },
+        "capacity": {
+          "type": "number",
+          "minimum": 0
+        },
+        "costRate": {
+          "type": "number"
+        },
+        "costAccrual": {
+          "type": "string",
+          "enum": [
+            "Start",
+            "Prorated",
+            "End"
+          ]
+        },
+        "maxUnits": {
+          "type": "number",
+          "minimum": 0
+        }
+      }
+    },
+    "Workstream": {
+      "type": "object",
+      "required": [
+        "id",
+        "name"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "Swimlane",
+            "FunctionalLane",
+            "OrganizationalLane",
+            "PhaseLane",
+            "Band",
+            "Track"
+          ]
+        },
+        "order": {
+          "type": "integer"
+        },
+        "parentWorkstreamId": {
+          "type": "string"
+        },
+        "color": {
+          "type": "string"
+        },
+        "collapsed": {
+          "type": "boolean",
+          "default": false
+        }
+      }
+    },
+    "Task": {
+      "type": "object",
+      "required": [
+        "id",
+        "name"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "wbsCode": {
+          "type": "string"
+        },
+        "wbsLevel": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "parentTaskId": {
+          "type": "string"
+        },
+        "isSummary": {
+          "type": "boolean",
+          "default": false
+        },
+        "isMilestone": {
+          "type": "boolean",
+          "default": false
+        },
+        "workstreamId": {
+          "type": "string"
+        },
+        "trackId": {
+          "type": "string"
+        },
+        "startDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "finishDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "duration": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "number"
+            },
+            "unit": {
+              "type": "string",
+              "enum": [
+                "minutes",
+                "hours",
+                "days",
+                "weeks",
+                "months"
+              ]
+            }
+          }
+        },
+        "effort": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "number"
+            },
+            "unit": {
+              "type": "string",
+              "enum": [
+                "minutes",
+                "hours",
+                "days"
+              ]
+            }
+          }
+        },
+        "workload": {
+          "type": "number"
+        },
+        "percentComplete": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "remainingDuration": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "number"
+            },
+            "unit": {
+              "type": "string",
+              "enum": [
+                "minutes",
+                "hours",
+                "days",
+                "weeks"
+              ]
+            }
+          }
+        },
+        "actualStart": {
+          "type": "string",
+          "format": "date"
+        },
+        "actualFinish": {
+          "type": "string",
+          "format": "date"
+        },
+        "baselineStart": {
+          "type": "string",
+          "format": "date"
+        },
+        "baselineFinish": {
+          "type": "string",
+          "format": "date"
+        },
+        "baselineDuration": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "number"
+            },
+            "unit": {
+              "type": "string",
+              "enum": [
+                "minutes",
+                "hours",
+                "days",
+                "weeks"
+              ]
+            }
+          }
+        },
+        "constraintType": {
+          "type": "string",
+          "enum": [
+            "AsSoonAsPossible",
+            "AsLateAsPossible",
+            "MustStartOn",
+            "MustFinishOn",
+            "StartNoEarlierThan",
+            "StartNoLaterThan",
+            "FinishNoEarlierThan",
+            "FinishNoLaterThan"
+          ]
+        },
+        "constraintDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "priority": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1000
+        },
+        "criticalPathMembership": {
+          "type": "boolean"
+        },
+        "totalFloat": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "number"
+            },
+            "unit": {
+              "type": "string",
+              "enum": [
+                "minutes",
+                "hours",
+                "days"
+              ]
+            }
+          }
+        },
+        "freeFloat": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "number"
+            },
+            "unit": {
+              "type": "string",
+              "enum": [
+                "minutes",
+                "hours",
+                "days"
+              ]
+            }
+          }
+        },
+        "assignments": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "resourceId": {
+                "type": "string"
+              },
+              "units": {
+                "type": "number"
+              },
+              "cost": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "resourceId"
+            ]
+          }
+        },
+        "calendarId": {
+          "type": "string"
+        },
+        "manual": {
+          "type": "boolean",
+          "default": false
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "Dependency": {
+      "type": "object",
+      "required": [
+        "id",
+        "predecessorId",
+        "successorId",
+        "type"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "predecessorId": {
+          "type": "string"
+        },
+        "successorId": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "FS",
+            "SS",
+            "FF",
+            "SF"
+          ]
+        },
+        "lag": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "number"
+            },
+            "unit": {
+              "type": "string",
+              "enum": [
+                "minutes",
+                "hours",
+                "days",
+                "weeks"
+              ]
+            }
+          }
+        },
+        "lead": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "number"
+            },
+            "unit": {
+              "type": "string",
+              "enum": [
+                "minutes",
+                "hours",
+                "days",
+                "weeks"
+              ]
+            }
+          }
+        },
+        "isCritical": {
+          "type": "boolean"
+        }
+      }
+    },
+    "Baseline": {
+      "type": "object",
+      "required": [
+        "id",
+        "name"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "capturedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "taskBaselines": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "taskId": {
+                "type": "string"
+              },
+              "start": {
+                "type": "string",
+                "format": "date"
+              },
+              "finish": {
+                "type": "string",
+                "format": "date"
+              },
+              "duration": {
+                "type": "object",
+                "properties": {
+                  "value": {
+                    "type": "number"
+                  },
+                  "unit": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "required": [
+              "taskId"
+            ]
+          }
+        }
+      }
+    },
+    "Boundary": {
+      "type": "object",
+      "required": [
+        "id",
+        "type"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "ProjectBoundary",
+            "PhaseBoundary",
+            "SprintBoundary",
+            "TimeBoundary",
+            "ScopeBoundary",
+            "ConstraintBoundary",
+            "Cutline"
+          ]
+        },
+        "name": {
+          "type": "string"
+        },
+        "date": {
+          "type": "string",
+          "format": "date"
+        },
+        "startDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "finishDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "color": {
+          "type": "string"
+        },
+        "style": {
+          "type": "string"
+        }
+      }
+    },
+    "ConfigurationProfile": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "tenantId": {
+          "type": "string"
+        },
+        "scheduling": {
+          "type": "object",
+          "properties": {
+            "autoScheduling": {
+              "type": "boolean"
+            },
+            "manualScheduling": {
+              "type": "boolean"
+            },
+            "resourceLeveling": {
+              "type": "boolean"
+            },
+            "levelingDelay": {
+              "type": "boolean"
+            },
+            "criticalChainBuffers": {
+              "type": "boolean"
+            },
+            "feedingBuffers": {
+              "type": "boolean"
+            }
+          }
+        },
+        "visual": {
+          "type": "object",
+          "properties": {
+            "barStyle": {
+              "type": "string"
+            },
+            "barColor": {
+              "type": "string"
+            },
+            "barShape": {
+              "type": "string"
+            },
+            "milestoneMarker": {
+              "type": "string"
+            },
+            "progressFill": {
+              "type": "string"
+            },
+            "gridlines": {
+              "type": "boolean"
+            },
+            "timescale": {
+              "type": "string",
+              "enum": [
+                "Hour",
+                "Day",
+                "Week",
+                "Month",
+                "Quarter",
+                "Year"
+              ]
+            },
+            "zoomLevel": {
+              "type": "number"
+            },
+            "calendarFormat": {
+              "type": "string"
+            },
+            "nonWorkingTimeShading": {
+              "type": "boolean"
+            },
+            "baselineOverlay": {
+              "type": "boolean"
+            },
+            "criticalPathHighlighting": {
+              "type": "boolean"
+            },
+            "dependencyLineStyle": {
+              "type": "string"
+            }
+          }
+        },
+        "layout": {
+          "type": "object",
+          "properties": {
+            "defaultSwimlaneType": {
+              "type": "string"
+            },
+            "showTracks": {
+              "type": "boolean"
+            },
+            "groupingRule": {
+              "type": "string"
+            },
+            "sortingRule": {
+              "type": "string"
+            },
+            "wbsVisible": {
+              "type": "boolean"
+            }
+          }
+        },
+        "validationRules": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "constraintRules": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "schedulingRules": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "demographics": {
+          "$ref": "#/$defs/DemographicsProfile"
+        }
+      }
+    },
+    "InvariantItem": {
+      "type": "object",
+      "required": [
+        "label",
+        "value"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "label": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "detail": {
+          "type": "string"
+        }
+      }
+    },
+    "AcademicStandingItem": {
+      "type": "object",
+      "required": [
+        "label",
+        "value"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "label": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "CareerMilestoneItem": {
+      "type": "object",
+      "required": [
+        "milestone",
+        "detail"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "milestone": {
+          "type": "string"
+        },
+        "detail": {
+          "type": "string"
+        }
+      }
+    },
+    "FundingItem": {
+      "type": "object",
+      "required": [
+        "id",
+        "provider",
+        "amount"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "provider": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "term": {
+          "type": "string"
+        },
+        "amount": {
+          "type": "number"
+        },
+        "action": {
+          "type": "string"
+        },
+        "link": {
+          "type": "string"
+        },
+        "secured": {
+          "type": "boolean",
+          "default": false
+        }
+      }
+    },
+    "DemographicsProfile": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "invariants": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/InvariantItem"
+          },
+          "description": "Current verified empirical invariants (e.g. current verified address, legal name, housing status, subsistence)."
+        },
+        "academicStanding": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/AcademicStandingItem"
+          },
+          "description": "Current academic standing parameters (e.g. degree progress, GPA benchmark, credits applied/needed)."
+        },
+        "careerArc": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/CareerMilestoneItem"
+          },
+          "description": "Career specialization milestones and target career trajectory."
+        },
+        "funding": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/FundingItem"
+          },
+          "description": "Funding pipeline opportunities, awards, and subsistence invariant items."
+        }
+      },
+      "description": "Normalized demographics and empirical invariants matrix. Provides a structured blank slate target for current constants, verified invariants, academic standing audit, career arc milestones, and funding pipelines."
+    }
+  }
+}
