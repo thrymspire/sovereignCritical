@@ -20,13 +20,13 @@
 
   <p>
     <a href="https://thrymspire.github.io/sovereignCritical/"><img src="https://img.shields.io/badge/Live%20Cockpit-GitHub%20Pages%20App-10b981?style=for-the-badge&logo=githubpages&logoColor=white" alt="Live Cockpit" /></a>
-    <a href="https://github.com/thrymspire/sovereignCritical"><img src="https://img.shields.io/badge/UAF%20Student%20ID-30926621-5ffbf1?style=for-the-badge&logo=alaskaairlines&logoColor=black" alt="Student ID" /></a>
+    <a href="https://github.com/thrymspire/sovereignCritical"><img src="https://img.shields.io/badge/Degree%20Works-B.A.%20Philosophy-5ffbf1?style=for-the-badge&logo=alaskaairlines&logoColor=black" alt="Degree Works" /></a>
     <a href="#-academic-trajectory--degree-works-matrix-39-credits-to-graduation"><img src="https://img.shields.io/badge/Degree%20Works-81%20Applied%20%7C%2039%20Remaining-9d5cff?style=for-the-badge" alt="Degree Works" /></a>
     <a href="#-demographics-invariants--financial-architecture"><img src="https://img.shields.io/badge/Tuition%20Policy-UAF%20eCampus%20Resident%20Waiver-5ffbf1?style=for-the-badge" alt="Tuition Policy" /></a>
     <a href="#-track-3-capital-sovereignty-student-loan-portfolio--9-month-rehabilitation"><img src="https://img.shields.io/badge/Student%20Loan%20Rehab-Month%203%20of%209%20(%245%2Fmo)-fbbf24?style=for-the-badge" alt="Loan Rehab" /></a>
     <a href="#-federal-pell-grant-restoration-400-lifetime-eligibility-reserve"><img src="https://img.shields.io/badge/Title%20IV%20Pell%20Reserve-400%25%20LEU%20(%2429%2C580)-5ffbf1?style=for-the-badge" alt="Pell Reserve" /></a>
     <a href="#-track-4-continuous-rolling-scholarships--graduate-funding-horizon"><img src="https://img.shields.io/badge/Rolling%20Pipeline-%2481%2C790%20Actionable-c084fc?style=for-the-badge" alt="Rolling Scholarships" /></a>
-    <a href="#-institutional-covenants-sovereign-financial-goals--semester-gpa-milestones"><img src="https://img.shields.io/badge/Academic%20Target-Term%20GPA%204.00%20%7C%20Cum%203.85%2B-10b981?style=for-the-badge" alt="Academic Target" /></a>
+    <a href="#-institutional-covenants-sovereign-financial-goals--semester-gpa-milestones"><img src="https://img.shields.io/badge/Academic%20Target-Term%20GPA%204.00%20%7C%20Overall%203.85%2B-10b981?style=for-the-badge" alt="Academic Target" /></a>
     <a href="#-academic-trajectory--degree-works-matrix-39-credits-to-graduation"><img src="https://img.shields.io/badge/Commencement-Saturday%2C%20May%206%2C%202028-9d5cff?style=for-the-badge" alt="Commencement" /></a>
     <a href="#-track-2-applied-formal-ontology--enterprise-knowledge-engineering"><img src="https://img.shields.io/badge/Career%20Horizon-%24120k%2B%20Remote%20Ontologist-5ffbf1?style=for-the-badge" alt="Career Horizon" /></a>
   </p>
@@ -208,16 +208,16 @@ Grades are direct mathematical gates that regulate transcript release, scholarsh
 
 | Semester Milestone | Term GPA Target | Cumulative Target | Critical Causal Dependencies & Renewal Unlocks |
 | :--- | :--- | :--- | :--- |
-| **Fall 2026 Milestone** (`tsk-gpa-gate-fall26`) | **4.00 Term** | **3.85+ Cum** | Unlocks official transcript release (`req-trans-01`), satisfies CIRI, KIC, and CCTHITA renewal GPA thresholds, clears registration prerequisites for Spring 2027 Senior Standing (13 cr). |
-| **Spring 2027 Milestone** (`tsk-gpa-gate-sp27`) | **4.00 Term** | **3.90+ Cum** | Reaches 94 cumulative credits; fulfills academic eligibility for Summer 2027 Pell Grant disbursement ($2,465) following March 28 rehabilitation completion; opens Fall 2027 enrollment. |
-| **Fall 2027 Milestone** (`tsk-gpa-gate-fa27`) | **4.00 Term** | **3.92+ Cum** | Reaches 107 cumulative credits; provides top-tier academic transcript for competitive NSF GRFP, Udall, and tribal graduate fellowship applications (`grad-fnd-sug-01`, `02`, `03`). |
-| **Spring 2028 Milestone** (`tsk-gpa-gate-sp28`) | **4.00 Term** | **3.95+ Cum** | Concludes 120-credit B.A. in Philosophy with **Summa Cum Laude** honors; Senior Honors Thesis (`PHIL F499`) finalized; confers Bachelor of Arts on May 6, 2028. |
+| **Fall 2026 Milestone** (`tsk-gpa-gate-fall26`) | **4.00 Term** | **3.85+ Overall** | Unlocks official transcript release (`req-trans-01`), satisfies CIRI, KIC, and CCTHITA renewal GPA thresholds, clears registration prerequisites for Spring 2027 Senior Standing (13 cr). |
+| **Spring 2027 Milestone** (`tsk-gpa-gate-sp27`) | **4.00 Term** | **3.90+ Overall** | Reaches 94 cumulative credits; fulfills academic eligibility for Summer 2027 Pell Grant disbursement ($2,465) following March 28 rehabilitation completion; opens Fall 2027 enrollment. |
+| **Fall 2027 Milestone** (`tsk-gpa-gate-fa27`) | **4.00 Term** | **3.92+ Overall** | Reaches 107 cumulative credits; provides top-tier academic transcript for competitive NSF GRFP, Udall, and tribal graduate fellowship applications (`grad-fnd-sug-01`, `02`, `03`). |
+| **Spring 2028 Milestone** (`tsk-gpa-gate-sp28`) | **4.00 Term** | **3.95+ Overall** | Concludes 120-credit B.A. in Philosophy with **Summa Honors** (Highest Distinction); Senior Honors Thesis (`PHIL F499`) finalized; confers Bachelor of Arts on May 6, 2028. |
 
 ---
 
 ## 🏛️ Academic Trajectory & Degree Works Matrix (39 Credits to Graduation)
 
-According to the certified University of Alaska Fairbanks Degree Works audit (Student ID: `30926621`, B.A. in Philosophy, Catalog 2025–2026):
+According to the certified University of Alaska Fairbanks Degree Works audit (B.A. in Philosophy, Catalog 2025–2026):
 * **Degree Target:** 120 Total Credits
 * **Credits Completed & Transferred:** **81 Credits** (69 transfer credits from UAA & UH Mānoa + 12 active Fall 2026 credits)
 * **Credits Remaining:** **Exactly 39 Upper-Division & GER Credits**
@@ -330,7 +330,7 @@ python bridge/schema_to_ui.py
     <em>“Trust the critical path. The discipline of today constructs the sovereignty of tomorrow.”</em>
   </p>
   <p>
-    <strong>Jeremiah D. Stack &bull; University of Alaska Fairbanks &bull; Student ID: 30926621</strong><br>
-    <a href="mailto:jstack@alaska.edu">jstack@alaska.edu</a> &bull; Fairbanks, Alaska &bull; Salem, Oregon
+    <strong>Jeremiah D. Stack &bull; University of Alaska Fairbanks</strong><br>
+    <em>Troth Yeddha' Campus &bull; Fairbanks, Alaska</em>
   </p>
 </div>

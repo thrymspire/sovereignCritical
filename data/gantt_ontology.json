@@ -285,8 +285,8 @@
     },
     {
       "id": "sub-01",
-      "name": "Fall 2026 Salem Rent Secured ($750/mo Paid Thru Jan 1)",
-      "description": "Current housing in Salem, OR (1165 High St SE) paid in full through December 31, 2026.",
+      "name": "Fall 2026 Housing Secured (Paid Thru Jan 1)",
+      "description": "Current residential basecamp secured and paid in full through December 31, 2026.",
       "wbsCode": "SUB-01",
       "workstreamId": "ws-capital-sovereignty",
       "trackId": "Track 3B: Secured Baseline Platform Assets",
@@ -301,7 +301,7 @@
       "criticalPathMembership": false,
       "isMilestone": true,
       "isSummary": false,
-      "notes": "STATUS: SECURED BASELINE ASSET [100% COMPLETE] | Portal: https://uaonline.alaska.edu/ | Gained Income: $3,000.00 Realized Asset (Salem Rent Paid in Full thru Dec 31) | Amount: $750 / mo [PAID] | Rubric: Active status. Zero housing cost stress during Fall academic gauntlet."
+      "notes": "STATUS: SECURED BASELINE ASSET [100% COMPLETE] | Portal: https://uaonline.alaska.edu/ | Gained Income: $3,000.00 Realized Asset (Housing Paid in Full thru Dec 31) | Amount: $750 / mo [PAID] | Rubric: Active status. Zero housing cost stress during Fall academic gauntlet."
     },
     {
       "id": "sub-04",
@@ -3805,7 +3805,7 @@
     },
     {
       "id": "req-degworks-01",
-      "name": "Export Certified UAF Degree Works Audit PDF (ID: 30926621)",
+      "name": "Export Certified UAF Degree Works Audit PDF ",
       "description": "High-resolution PDF export of Degree Works audit demonstrating exactly 39 credits remaining for Philosophy B.A.",
       "wbsCode": "REQ-DEGWORKS-01",
       "workstreamId": "ws-scholarships",
@@ -3881,7 +3881,7 @@
       "criticalPathMembership": true,
       "isMilestone": false,
       "isSummary": false,
-      "notes": "Portal: https://uaonline.alaska.edu/ | Amount: Need Certification | Rubric: UAF Financial Aid calculates Cost of Attendance ($18,450/yr) minus SAI to establish unmet need. | Strategic Notes: Include Jeremiah's Student ID (30926621) and clear cover note specifying tribal recipient deadlines."
+      "notes": "Portal: https://uaonline.alaska.edu/ | Amount: Need Certification | Rubric: UAF Financial Aid calculates Cost of Attendance ($18,450/yr) minus SAI to establish unmet need. | Strategic Notes: Include Jeremiah's Student ID () and clear cover note specifying tribal recipient deadlines."
     },
     {
       "id": "req-fna-followup",
@@ -4125,8 +4125,8 @@
     },
     {
       "id": "req-lease-kic",
-      "name": "Compile Salem Lease Agreement & Utility Verification Packet",
-      "description": "Certified copy of Salem residential lease ($750/mo paid through Dec 31, 2026) + utility bill proof for KIC housing grant.",
+      "name": "Compile Residential Lease Agreement & Utility Verification Packet",
+      "description": "Certified copy of residential lease (paid through Dec 31, 2026) + utility bill proof for KIC housing grant.",
       "wbsCode": "REQ-LEASE-KIC",
       "workstreamId": "ws-scholarships",
       "trackId": "Track 4A: Alaska Native Tribal Scholarships (Rolling Windows All Undergrad Terms)",
@@ -4986,7 +4986,7 @@
     {
       "id": "sub-07",
       "name": "Chemawa Indian Health Service & OHP Comprehensive Healthcare Active",
-      "description": "Full medical, dental, behavioral health, and prescription coverage through Oregon Health Plan (Medicaid) and Chemawa IHS Clinic in Salem, OR ($0 out of pocket).",
+      "description": "Full medical, dental, behavioral health, and prescription coverage through Chemawa IHS Clinic ($0 out of pocket).",
       "wbsCode": "SUB-07",
       "workstreamId": "ws-capital-sovereignty",
       "trackId": "Track 3B: Secured Baseline Platform Assets",
@@ -8161,12 +8161,12 @@
     "funding": [
       {
         "id": "fnd-asset-rent",
-        "provider": "Salem Residence Basecamp Secured (1165 High St SE)",
+        "provider": "Residential Basecamp Secured",
         "amount": 3000.0,
         "type": "Secured Baseline Asset",
         "term": "Fall 2026",
         "action": "Rent Paid in Full through Dec 31, 2026 ($750/mo x 4 months)",
-        "link": "Local Salem Basecamp",
+        "link": "Residential Basecamp",
         "secured": true
       },
       {
@@ -8413,19 +8413,19 @@
     "academicStanding": [
       {
         "label": "Fall 2026 Term GPA Target & Causal Gate",
-        "value": "12 Credits Enrolled | Target Term GPA: 4.00 | Cum Target: 3.85+ | Verification Gate: tsk-gpa-gate-fall26 (Dec 19, 2026)"
+        "value": "12 Credits Enrolled | Target Term GPA: 4.00 | Overall Target: 3.85+ | Verification Gate: tsk-gpa-gate-fall26 (Dec 19, 2026)"
       },
       {
         "label": "Spring 2027 Senior Standing GPA Goal",
-        "value": "Senior Standing (94 Cr Cum) | 13 Credits | Target Term GPA: 4.00 | Cum Target: 3.90+ | Verification Gate: tsk-gpa-gate-sp27 (May 15, 2027)"
+        "value": "Senior Standing (94 Cr Total) | 13 Credits | Target Term GPA: 4.00 | Overall Target: 3.90+ | Verification Gate: tsk-gpa-gate-sp27 (May 15, 2027)"
       },
       {
         "label": "Fall 2027 Core Advancement GPA Goal",
-        "value": "Senior Standing (107 Cr Cum) | 13 Credits | Target Term GPA: 4.00 | Cum Target: 3.92+ | Verification Gate: tsk-gpa-gate-fa27 (Dec 18, 2027)"
+        "value": "Senior Standing (107 Cr Total) | 13 Credits | Target Term GPA: 4.00 | Overall Target: 3.92+ | Verification Gate: tsk-gpa-gate-fa27 (Dec 18, 2027)"
       },
       {
         "label": "Spring 2028 Capstone & Honors Thesis GPA Goal",
-        "value": "Degree Conferred (120 Cr Cum) | 13 Credits | Target Term GPA: 4.00 | Cum Target: 3.95+ Summa Cum Laude | Gate: tsk-gpa-gate-sp28 (May 6, 2028)"
+        "value": "Degree Conferred (120 Cr Total) | 13 Credits | Target Term GPA: 4.00 | Overall Target: 3.95+ Summa Honors | Gate: tsk-gpa-gate-sp28 (May 6, 2028)"
       },
       {
         "label": "Degree Works Upper-Division Degree Audit Progress",
