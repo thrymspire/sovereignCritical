@@ -1,8 +1,8 @@
 {
   "meta": {
     "schemaVersion": "1.0.0",
-    "createdAt": "2026-09-07T04:04:40.620540+00:00",
-    "updatedAt": "2026-09-07T04:04:40.620540+00:00",
+    "createdAt": "2026-09-07T04:39:05.511573+00:00",
+    "updatedAt": "2026-09-07T04:39:05.511573+00:00",
     "tenantId": "primary",
     "parameterSetId": "master-critical-path-sovereign-v4",
     "dataDictionaryVersion": "1.0.0"
@@ -8108,19 +8108,24 @@
   "demographics": {
     "invariants": [
       {
-        "label": "TITLE IV DEFAULTED STUDENT LOAN PORTFOLIO ($78,429.01 IN 13 LOANS)",
+        "label": "TITLE IV STUDENT LOAN 9-MONTH REHABILITATION COVENANT (HEA § 428F)",
         "value": "$78,429.01 in 13 Loans @ 3.40%–6.80% APR ($5.00/mo Rehab Payment due 28th)",
         "detail": "Under active HEA § 428F statutory loan rehabilitation with Default Resolution Group (DRG / Maximus) / U.S. Dept of Education. Portfolio: 13 federal direct/FFELP loans totaling $78,429.01 ($18,500 principal + accumulated interest). Fixed interest rates range from 3.40% to 6.80% (weighted average APR: 4.85%; daily accrual: $2.455/day). Governed by $5.00/month rehabilitation agreement due on the 28th of each month. Payment #9 on March 28, 2027 completes statutory rehabilitation: default notation is permanently expunged from Equifax, Experian, and TransUnion credit bureaus, Title IV federal student aid eligibility is officially restored on NSLDS (unlocking 400% remaining Pell Grant = $29,580), and loans transition to Nelnet/Aidvantage under statutory $0/mo In-School Deferment (34 CFR § 682.210) with interest frozen on $26,675 subsidized loans."
       },
       {
-        "label": "⚠️ CURRENT TUITION DEFICIT (UAF BURSAR GATE)",
+        "label": "⚠️ CURRENT TUITION DEFICIT (UAF BURSAR HOLD GATE)",
         "value": "$3,712.00 Net Balance Due (Hold Release Deadline: Nov 1, 2026)",
         "detail": "Gross tuition/fees of $4,544.00 offset by $832.00 Sealaska Fall 2026 award = $3,712.00 net balance. Academic registration hold active; must be cleared, deferred, or covered by third-party tribal sponsor guarantees (CIRI/Sealaska/KIC) by November 1, 2026 before Spring 2027 priority registration opens on November 9, 2026."
       },
       {
-        "label": "FEDERAL PELL GRANT: 400% LIFETIME ELIGIBILITY (LEU) INTACT",
-        "value": "400% LEU Remaining ($29,580.00 Total Entitlement Reserve)",
-        "detail": "4 full academic years (8 full-time semesters) of statutory Federal Pell Grant eligibility remain out of the 600% lifetime limit. Unlocks in April 2027 immediately following Month 9 loan rehabilitation exit in March 2027. Provides guaranteed statutory grants: Summer 2027 ($2,465), Fall 2027 ($3,698), and Spring 2028 ($3,698), fully funding senior year tuition and generating living refunds."
+        "label": "DEGREE WORKS UPPER-DIVISION TUITION GOAL (39 CREDITS)",
+        "value": "$16,410.00 Total Degree Tuition (39 Upper-Division Credits to Graduation)",
+        "detail": "Total remaining tuition cost to complete the B.A. in Philosophy at UAF: 39 credits across 3 consecutive 13-credit terms (Spring 2027, Fall 2027, Spring 2028) at the UAF eCampus In-State resident rate ($289.00/credit + fees). Fully covered by the $111,370+ comprehensive resource pool."
+      },
+      {
+        "label": "UAF ECAMPUS DISTANCE RESIDENT TUITION POLICY (OUT-OF-STATE WAIVER)",
+        "value": "Resident Tuition Rate Active: $289.00 / credit ($3,757 / 13 credits + $985 fees = $4,742 total)",
+        "detail": "Statutory UA Board of Regents policy granting Alaska resident tuition rates to out-of-state students enrolled in eCampus distance courses, eliminating the $800+/credit non-resident surcharge ($3,757 tuition + $985 mandatory fees = $4,742 total term bill). Saves over $21,000 across the remaining 39 credits."
       },
       {
         "label": "ROLLING SCHOLARSHIP APPLICATION PIPELINE (ALL UNDERGRADUATE TERMS)",
@@ -8128,54 +8133,29 @@
         "detail": "All scholarships maintain continuous rolling application windows through the end of the degree track as long as undergraduate matriculation is active. Continuous submission windows span every term (Fall 2026, Spring 2027, Summer 2027, Fall 2027, and the final undergraduate rolling window for Spring 2028 before commencement). Prerequisite: Satisfactory Academic Progress (SAP) and cumulative GPA >= 3.50 honors benchmark."
       },
       {
+        "label": "FEDERAL PELL GRANT: 400% LIFETIME ELIGIBILITY (LEU) INTACT",
+        "value": "400% LEU Remaining ($29,580.00 Total Entitlement Reserve)",
+        "detail": "4 full academic years (8 full-time semesters) of statutory Federal Pell Grant eligibility remain out of the 600% lifetime limit. Unlocks in April 2027 immediately following Month 9 loan rehabilitation exit in March 2027. Provides guaranteed statutory grants: Summer 2027 ($2,465), Fall 2027 ($3,698), and Spring 2028 ($3,698), fully funding senior year tuition and generating living refunds."
+      },
+      {
         "label": "GRADUATE SCHOOL FUNDING HORIZON (POST-BACCALAUREATE SCOUTING)",
         "value": "Targeting $15,000–$37,000/yr Post-Baccalaureate Fellowships",
-        "detail": "Proactive graduate funding roadmap established in Senior Year (Fall 2027 - Spring 2028) scouting: CIRI Foundation Graduate Fellowship ($10,000/yr), Sealaska Heritage Graduate Scholarship ($4,000–$6,000/yr), KIC Graduate Grant ($5,000/yr), CCTHITA Graduate Studies, Cobell Graduate Fellowship ($12,500/yr), and NSF Graduate Research Fellowship Program (GRFP: $37,000/yr stipend + $16,000/yr cost of education allowance)."
+        "detail": "Proactive scouting and application horizon during Senior Year (Fall 2027 & Spring 2028) targeting CIRI/Sealaska graduate fellowships ($15k–$25k/yr), Cobell Graduate fellowships ($12.5k/yr), and the National Science Foundation Graduate Research Fellowship Program (NSF GRFP: $37k/yr stipend + $16k tuition allowance) to transition directly from B.A. in Philosophy into a funded Master's/Ph.D. in formal ontology and knowledge engineering."
       },
       {
-        "label": "UAF eCampus Distance Resident Tuition Policy (Out-of-State Waiver)",
-        "value": "Resident Tuition Rate Active: $289.00 / credit ($3,757 / 13 credits + $985 fees = $4,742 total)",
-        "detail": "UAF policy allows fully online out-of-state distance students to pay resident tuition ($289/cr vs $848/cr non-resident), saving $559/credit (~$7,267/semester on 13 credits; ~$14,534/year). Lowers semester cost from $11,024 to $4,742, making tuition 100% fundable via tribal scholarships."
-      },
-      {
-        "label": "Projected Degree Tuition Liabilities vs Comprehensive Funding Pipeline",
-        "value": "Projected Tuition: $16,410.00 (39 Credits) vs $96,580.00+ Cumulative Resource Pool",
-        "detail": "Remaining tuition liabilities: Sp'27 ($4,742), Su'27 ($2,184), Fa'27 ($4,742), Sp'28 ($4,742) = $16,410.00. Actionable pipeline provides $81,790.00 in tribal/merit scholarships plus $14,790+ in restored Federal Pell Grants, producing a +$80,170.00+ Net Sovereign Residential & Living Surplus."
-      },
-      {
-        "label": "Statutory Student Loan Deferment Mandate (34 CFR § 682.210)",
+        "label": "STATUTORY STUDENT LOAN DEFERMENT MANDATE (34 CFR § 682.210)",
         "value": "Full-Time Status Required (>= 12 Credits) for $0/mo In-School Deferment",
-        "detail": "Following March 2027 rehabilitation exit, maintaining full-time matriculation (13 credits/term) grants statutory In-School Deferment: freezes interest on $26,675 subsidized loans, maintains $0/mo IDR payments, and unlocks maximum Federal Pell Grant ($7,395/yr)."
+        "detail": "Federal statutory right under 34 CFR § 682.210 granting complete payment deferment during full-time enrollment (>= 12 credits/term). Following Month 9 rehabilitation in March 2027, loans enter verified in-school deferment at $0.00/month payment through May 2028 graduation, with federal government subsidizing interest on $26,675 in subsidized loans."
       },
       {
-        "label": "Residential Basecamp Invariant",
-        "value": "1165 High St SE, Salem, Oregon 97302 (Rent Paid in Full Through Dec 31, 2026)",
-        "detail": "Stable private residence ($750/mo); fully paid through year-end with zero housing stress or arrears; January 1 rent bridge secured via CIRI/KIC ($2,258 tuition refund surplus)."
-      },
-      {
-        "label": "Nutrition Invariant (Food Stamps)",
-        "value": "Oregon Trail EBT (SNAP) Active Verified Case ($298.00 / month)",
-        "detail": "Loaded on the 8th of every month; completely eliminates out-of-pocket food expenditures ($0 food deficit; $3,576/year value)."
-      },
-      {
-        "label": "Communications Invariant (Cell Phone)",
-        "value": "Mobile Cellular Voice & High-Speed Data Service Paid ($55.00 / month)",
-        "detail": "Active uninterrupted mobile service line; fully funded in advance; essential gateway for UAF faculty contact, Canvas LMS, and Zoom presentations ($660/yr value)."
-      },
-      {
-        "label": "Healthcare & Clinical Invariant",
-        "value": "Oregon Health Plan (OHP Medicaid) + Chemawa Indian Health Service Clinic",
-        "detail": "$0 out-of-pocket medical, dental, behavioral health, and prescription coverage; active comprehensive tribal health access in Salem, OR ($6,000/year value)."
-      },
-      {
-        "label": "Tribal Citizen Lineage Invariants",
+        "label": "TRIBAL CITIZEN LINEAGE & ENROLLMENT INVARIANTS",
         "value": "Central Council Tlingit & Haida Citizen | Ketchikan Indian Community Enrolled",
-        "detail": "BIA Form 4432 Certified CDIB verified; Sealaska Corporation Shareholder Lineage; The CIRI Foundation Lineal Descendant."
+        "detail": "Verified tribal citizen enrollment with Central Council of Tlingit & Haida Indian Tribes of Alaska (CCTHITA) and Ketchikan Indian Community (KIC); direct lineal descendant of original enrollees for The CIRI Foundation (TCF) and Sealaska Corporation (SHI). Establishes exclusive statutory eligibility for dedicated Alaska Native tribal higher education compact grants and leadership awards."
       },
       {
-        "label": "Corporate Entity Registration",
+        "label": "CORPORATE ENTITY REGISTRATION",
         "value": "State of Oregon ORESTAR Registry Active | SAM.gov Commercial Enterprise",
-        "detail": "Compliant corporate entity vehicle ready for federal subcontracting (CAGE / UEI / SAM active)."
+        "detail": "Active commercial business registry on Oregon ORESTAR and registered Unique Entity Identifier (UEI) on federal SAM.gov commercial registry for formal ontology consulting and government contracting subcontracts."
       }
     ],
     "funding": [
@@ -8432,28 +8412,28 @@
     ],
     "academicStanding": [
       {
-        "label": "Total Credits Earned (Cumulative)",
-        "value": "81.0 Credits Verified on UAF Transcript (Upper-Division Junior Standing)"
+        "label": "Fall 2026 Term GPA Target & Causal Gate",
+        "value": "12 Credits Enrolled | Target Term GPA: 4.00 | Cum Target: 3.85+ | Verification Gate: tsk-gpa-gate-fall26 (Dec 19, 2026)"
       },
       {
-        "label": "Cumulative Grade Point Average (GPA)",
-        "value": "2.81 Cumulative (Targeting 4.00 Fall Term GPA -> Elevates Cumulative GPA to 3.01+)"
+        "label": "Spring 2027 Senior Standing GPA Goal",
+        "value": "Senior Standing (94 Cr Cum) | 13 Credits | Target Term GPA: 4.00 | Cum Target: 3.90+ | Verification Gate: tsk-gpa-gate-sp27 (May 15, 2027)"
       },
       {
-        "label": "Fall 2026 In-Progress Enrollment",
-        "value": "12.0 Credits Full-Time Matriculated (COMM 131, CITS F205, PLS F102, RELG F221X)"
+        "label": "Fall 2027 Core Advancement GPA Goal",
+        "value": "Senior Standing (107 Cr Cum) | 13 Credits | Target Term GPA: 4.00 | Cum Target: 3.92+ | Verification Gate: tsk-gpa-gate-fa27 (Dec 18, 2027)"
       },
       {
-        "label": "Remaining Degree Completion Balance",
-        "value": "39.0 Credits (Philosophy B.A. Degree Works Audit Mapped; Conferral: May 6, 2028)"
+        "label": "Spring 2028 Capstone & Honors Thesis GPA Goal",
+        "value": "Degree Conferred (120 Cr Cum) | 13 Credits | Target Term GPA: 4.00 | Cum Target: 3.95+ Summa Cum Laude | Gate: tsk-gpa-gate-sp28 (May 6, 2028)"
       },
       {
-        "label": "Distance Resident Tuition Qualification",
-        "value": "$289.00 / credit (UAF eCampus In-State Rate Confirmed; Saving $7,267 / semester)"
+        "label": "Degree Works Upper-Division Degree Audit Progress",
+        "value": "81 Credits Applied of 120 Required | Exactly 39 Upper-Division & GER Credits Remaining to Graduate"
       },
       {
-        "label": "Title IV SAP Standing & Pell LEU",
-        "value": "Good Academic Standing (400% LEU Intact; Restores Full Title IV Grants upon March 2027 Rehab Exit)"
+        "label": "UAF Commencement & Degree Conferral Date",
+        "value": "Saturday, May 6, 2028 at Carlson Center in Fairbanks, Alaska"
       }
     ],
     "careerArc": [
