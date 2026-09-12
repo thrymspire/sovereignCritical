@@ -59,4 +59,33 @@ jobs:
           cargo --version
 
       - name: Check Tauri shell
-        run: cargo check --manifest-path app/src-tauri/Cargo.toml
+        id: cargo-check
+        continue-on-error: true
+        shell: bash
+        run: |
+          set +e
+          cargo check --manifest-path app/src-tauri/Cargo.toml 2>&1 | tee /tmp/mcp-cargo-check.log
+          status=${PIPESTATUS[0]}
+          echo "$status" > /tmp/mcp-cargo-check.status
+          exit "$status"
+
+      - name: Preserve Tauri compiler diagnostics
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: tauri-cargo-check-diagnostics
+          path: |
+            /tmp/mcp-cargo-check.log
+            /tmp/mcp-cargo-check.status
+          if-no-files-found: error
+          retention-days: 7
+
+      - name: Enforce Tauri check result
+        if: always()
+        shell: bash
+        run: |
+          status=$(cat /tmp/mcp-cargo-check.status)
+          if [ "$status" -ne 0 ]; then
+            echo "Tauri cargo check failed with exit code $status."
+            exit "$status"
+          fi
