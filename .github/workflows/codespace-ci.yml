@@ -26,6 +26,10 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: mcp-codespace-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build-workstation:
     runs-on: ubuntu-latest
