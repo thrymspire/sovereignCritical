@@ -3,12 +3,12 @@ gantt_ontology
 ==============
 
 Scheduling parameterization plus the provenance-first Master Critical Path
-domain envelope.
+domain envelope and deterministic evaluation services.
 
 The legacy Gantt models remain available for backward compatibility. New MCP
-truth/evidence, scholarship, syllabus, import, notification, proof, and
-boundary-contract models live in ``mcp_domain`` and are additive during the
-migration from the legacy single-document graph.
+truth/evidence, scholarship, syllabus, import, notification, proof, boundary
+contract, ingestion, and evaluation APIs are additive during migration from the
+legacy single-document graph.
 """
 
 from .models import (
@@ -71,8 +71,30 @@ from .mcp_domain import (
     ImportCandidate,
     Suggestion,
 )
+from .legacy_adapter import legacy_document_sha256, legacy_gantt_to_mcp_envelope
+from .ingestion import (
+    SyllabusAssignmentPayload,
+    SyllabusImportPayload,
+    ingest_syllabus_payload,
+)
+from .rule_engine import (
+    ConditionResult,
+    ContractEvaluationState,
+    ConditionEvaluation,
+    ProposedBoundaryEffect,
+    BoundaryEvaluation,
+    evaluate_boundary_contract,
+    evaluate_changed_assertions,
+)
+from .scholarship_engine import (
+    CriterionState,
+    ScholarshipEligibilityState,
+    CriterionEvaluation,
+    ScholarshipEvaluation,
+    evaluate_scholarship,
+)
 
-__version__ = "1.1.0"
+__version__ = "1.2.0"
 
 __all__ = [
     # Legacy scheduling ontology
@@ -133,4 +155,24 @@ __all__ = [
     "ImportArtifact",
     "ImportCandidate",
     "Suggestion",
+    # Adapters and ingestion
+    "legacy_document_sha256",
+    "legacy_gantt_to_mcp_envelope",
+    "SyllabusAssignmentPayload",
+    "SyllabusImportPayload",
+    "ingest_syllabus_payload",
+    # Boundary contract evaluation
+    "ConditionResult",
+    "ContractEvaluationState",
+    "ConditionEvaluation",
+    "ProposedBoundaryEffect",
+    "BoundaryEvaluation",
+    "evaluate_boundary_contract",
+    "evaluate_changed_assertions",
+    # Scholarship evaluation
+    "CriterionState",
+    "ScholarshipEligibilityState",
+    "CriterionEvaluation",
+    "ScholarshipEvaluation",
+    "evaluate_scholarship",
 ]
