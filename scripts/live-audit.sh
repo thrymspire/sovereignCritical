@@ -73,6 +73,10 @@ required_repo_contracts() {
   return "$missing"
 }
 
+clean_tree() {
+  [[ -z "$(git status --porcelain)" ]]
+}
+
 check "working branch guard" branch_guard
 check "no whitespace errors" git diff --check HEAD
 check "private source artifacts excluded from Git" no_private_artifacts_tracked
@@ -117,7 +121,7 @@ PY'
   check "Tauri Rust shell" cargo check --manifest-path app/src-tauri/Cargo.toml
 
   if [[ "$mode" == "--pre-push" ]]; then
-    check "pre-push tree is clean" bash -lc 'test -z "$(git status --porcelain)"'
+    check "pre-push tree is clean" clean_tree
   fi
 fi
 
