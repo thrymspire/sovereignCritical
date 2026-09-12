@@ -1,19 +1,14 @@
 """
 gantt_ontology
 ==============
-Canonical Gantt Parameterization Ontology.
 
-Clean, schema-driven models for:
-- Task / Activity parameters
-- Dependency parameters
-- Resource parameters
-- Structural Layout (Swimlane / Track / Boundary)
-- Visual / Rendering parameters
-- Scheduling Engine parameters
-- Ontology / Metadata parameters
+Scheduling parameterization plus the provenance-first Master Critical Path
+domain envelope.
 
-No data absorption, no import logic.
-Serialization / deserialization and validation only.
+The legacy Gantt models remain available for backward compatibility. New MCP
+truth/evidence, scholarship, syllabus, import, notification, proof, and
+boundary-contract models live in ``mcp_domain`` and are additive during the
+migration from the legacy single-document graph.
 """
 
 from .models import (
@@ -42,9 +37,45 @@ from .models import (
     FundingItem,
     DemographicsProfile,
 )
+from .mcp_domain import (
+    MCPDomainEnvelope,
+    AuthorityTier,
+    VerificationState,
+    ClaimType,
+    SourceKind,
+    ImpactLevel,
+    ConditionOperator,
+    BoundaryAction,
+    NotificationSeverity,
+    ImportCandidateState,
+    SuggestionKind,
+    SuggestionState,
+    EntityRef,
+    Source,
+    Evidence,
+    Assertion,
+    RuleCondition,
+    BoundaryEffect,
+    BoundaryContract,
+    ProofRequirement,
+    CourseOffering,
+    Syllabus,
+    Assignment,
+    EligibilityCriterion,
+    RequiredDocument,
+    ApplicationWindow,
+    AwardFormula,
+    ScholarshipProgram,
+    NotificationPolicy,
+    ImportArtifact,
+    ImportCandidate,
+    Suggestion,
+)
 
-__version__ = "1.0.0"
+__version__ = "1.1.0"
+
 __all__ = [
+    # Legacy scheduling ontology
     "Meta",
     "Project",
     "Calendar",
@@ -69,4 +100,37 @@ __all__ = [
     "CareerMilestoneItem",
     "FundingItem",
     "DemographicsProfile",
+    # MCP provenance-first domain
+    "MCPDomainEnvelope",
+    "AuthorityTier",
+    "VerificationState",
+    "ClaimType",
+    "SourceKind",
+    "ImpactLevel",
+    "ConditionOperator",
+    "BoundaryAction",
+    "NotificationSeverity",
+    "ImportCandidateState",
+    "SuggestionKind",
+    "SuggestionState",
+    "EntityRef",
+    "Source",
+    "Evidence",
+    "Assertion",
+    "RuleCondition",
+    "BoundaryEffect",
+    "BoundaryContract",
+    "ProofRequirement",
+    "CourseOffering",
+    "Syllabus",
+    "Assignment",
+    "EligibilityCriterion",
+    "RequiredDocument",
+    "ApplicationWindow",
+    "AwardFormula",
+    "ScholarshipProgram",
+    "NotificationPolicy",
+    "ImportArtifact",
+    "ImportCandidate",
+    "Suggestion",
 ]
