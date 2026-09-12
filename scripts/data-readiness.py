@@ -54,6 +54,10 @@ def main() -> int:
     manifest = private_root / "manifest" / "artifacts.jsonl"
     records = load_manifest(manifest)
     types = Counter(str(r["artifactType"]).strip().lower() for r in records)
+    date_states = Counter(
+        str((r.get("dateResolution") or {}).get("state", "legacy-or-unreported"))
+        for r in records
+    )
 
     core_status = {
         name: any(types[alias] > 0 for alias in aliases)
@@ -69,11 +73,15 @@ def main() -> int:
         "manifest": str(manifest),
         "artifactCount": len(records),
         "artifactTypes": dict(sorted(types.items())),
+        "dateResolution": dict(sorted(date_states.items())),
         "core": core_status,
         "optionalIfApplicable": optional_status,
         "coreReady": all(core_status.values()),
+        "dateReviewRequired": any(date_states[state] > 0 for state in ("ambiguous", "unresolved")),
         "notes": [
             "Syllabus presence is necessary but not sufficient; active-course count must be reconciled against registration after parsing.",
+            "Artifact ingestion time is not treated as a document/effective date.",
+            "Ambiguous or unresolved artifact dates remain review items; they are not guessed into chronology.",
             "Scholarship artifacts are required when a scholarship is being pursued, relied upon, or used in funding projections.",
             "Presence means the source has been ingested, not that its assertions are institutionally verified.",
         ],
@@ -89,7 +97,14 @@ def main() -> int:
             print(f"  {'READY' if present else 'MISSING':7} {name}")
         for name, present in optional_status.items():
             print(f"  {'PRESENT' if present else 'IF-APPLICABLE':13} {name}")
+        print("\n  date resolution:")
+        if date_states:
+            for state, count in sorted(date_states.items()):
+                print(f"    {state:20} {count}")
+        else:
+            print("    no artifacts ingested")
         print(f"\n  core source bundle ready: {'YES' if result['coreReady'] else 'NO'}")
+        print(f"  date review required: {'YES' if result['dateReviewRequired'] else 'NO'}")
         print("  verification ready: NO until ingestion/parsing/corroboration completes")
 
     return 0 if result["coreReady"] else 2
