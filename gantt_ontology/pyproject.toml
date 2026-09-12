@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "gantt-ontology"
-version = "1.0.0"
-description = "Canonical Gantt Parameterization Ontology — schema + Pydantic models. No data import."
+version = "1.1.0"
+description = "Master Critical Path scheduling and provenance-first domain ontology"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
