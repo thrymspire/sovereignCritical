@@ -57,12 +57,14 @@ no_private_artifacts_tracked() {
 required_repo_contracts() {
   local missing=0
   for path in \
-    docs/MASTER_CRITICAL_PATH_ENGINEERING_CONSTITUTION.md \
-    docs/BASELINE_AUDIT_2026-09-12.md \
+    docs/MASTER_CRITICAL_PATH_CONSTITUTION.md \
+    docs/BASELINE_AUDIT.md \
+    docs/CODESPACE_OPERATIONS.md \
     gantt_ontology/pyproject.toml \
     app/package.json \
     .devcontainer/devcontainer.json \
-    scripts/intake-artifact.sh; do
+    scripts/intake-artifact.sh \
+    scripts/data-readiness.py; do
     if [[ ! -e "$path" ]]; then
       echo "missing: $path"
       missing=1
