@@ -1,0 +1,48 @@
+name: MCP Live Audit
+
+on:
+  push:
+    branches:
+      - project-owners/master-critical-path-v1
+      - project-owners/master-critical-path-codespace
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  repository-audit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Run repository truth and privacy audit
+        env:
+          MCP_AUDIT_DIR: ${{ runner.temp }}/mcp-audit
+        run: bash scripts/live-audit.sh --ci
+
+      - name: Publish audit summary
+        if: always()
+        shell: bash
+        run: |
+          latest=$(find "${{ runner.temp }}/mcp-audit" -type f -name 'audit-*.log' 2>/dev/null | sort | tail -n 1)
+          if [ -n "$latest" ]; then
+            {
+              echo '## Master Critical Path live audit'
+              echo '```text'
+              tail -n 80 "$latest"
+              echo '```'
+            } >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Preserve live-audit evidence
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: mcp-live-audit-${{ github.sha }}
+          path: ${{ runner.temp }}/mcp-audit/
+          if-no-files-found: error
+          retention-days: 30
