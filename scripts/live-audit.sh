@@ -64,6 +64,8 @@ required_repo_contracts() {
     app/package.json \
     .devcontainer/devcontainer.json \
     scripts/intake-artifact.sh \
+    scripts/intake-dropbox.py \
+    scripts/reconcile-artifact-date.py \
     scripts/data-readiness.py; do
     if [[ ! -e "$path" ]]; then
       echo "missing: $path"
@@ -80,17 +82,34 @@ clean_tree() {
 intake_selftest() {
   local tmp manifest count
   tmp="$(mktemp -d)"
-  printf 'mcp-intake-selftest\n' > "$tmp/fixture.txt"
+  printf 'historical source fixture\n' > "$tmp/record-2023-04-05.txt"
 
   MCP_PRIVATE_DATA="$tmp/vault" bash scripts/intake-artifact.sh \
-    "$tmp/fixture.txt" self-test "MCP CI" 2026-09-12 >/dev/null
+    "$tmp/record-2023-04-05.txt" self-test "MCP CI" >/dev/null
   MCP_PRIVATE_DATA="$tmp/vault" bash scripts/intake-artifact.sh \
-    "$tmp/fixture.txt" self-test "MCP CI" 2026-09-12 >/dev/null
+    "$tmp/record-2023-04-05.txt" self-test "MCP CI" >/dev/null
 
   manifest="$tmp/vault/manifest/artifacts.jsonl"
   count="$(grep -cve '^[[:space:]]*$' "$manifest" || true)"
   if [[ "$count" -ne 1 ]]; then
     echo "Expected one idempotent manifest entry, found $count"
+    rm -rf "$tmp"
+    return 1
+  fi
+
+  if ! python - "$manifest" <<'PY'
+import json
+import sys
+from pathlib import Path
+record = json.loads(Path(sys.argv[1]).read_text(encoding="utf-8").strip())
+assert record["documentDate"] == "2023-04-05", record
+assert record["dateResolution"]["state"] == "resolved", record
+assert record["storagePolicy"] == "content-addressed-sha256", record
+assert "/originals/sha256/" in record["storedPath"], record
+assert record["ingestedAt"] != record["documentDate"], record
+PY
+  then
+    echo "Date reconciliation/content-addressed intake self-test failed"
     rm -rf "$tmp"
     return 1
   fi
@@ -103,8 +122,8 @@ check "working branch guard" branch_guard
 check "no whitespace errors" git diff --check HEAD
 check "private source artifacts excluded from Git" no_private_artifacts_tracked
 check "required repository contracts present" required_repo_contracts
-check "data readiness tool compiles" python -m py_compile scripts/data-readiness.py
-check "artifact intake is idempotent" intake_selftest
+check "intake Python tools compile" python -m py_compile scripts/data-readiness.py scripts/intake-dropbox.py scripts/reconcile-artifact-date.py
+check "artifact intake is idempotent and date-safe" intake_selftest
 
 if command -v shellcheck >/dev/null 2>&1; then
   check "shell scripts pass shellcheck" shellcheck scripts/codespace-bootstrap.sh scripts/codespace-status.sh scripts/install-git-hooks.sh scripts/live-audit.sh scripts/intake-artifact.sh
