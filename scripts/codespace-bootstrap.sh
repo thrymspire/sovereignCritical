@@ -15,6 +15,18 @@ fi
 private_root="${MCP_PRIVATE_DATA:-/workspaces/.mcp-private/sovereignCritical}"
 install -d -m 700 \
   "$private_root/incoming" \
+  "$private_root/incoming/transcripts" \
+  "$private_root/incoming/degree-audits" \
+  "$private_root/incoming/registration" \
+  "$private_root/incoming/syllabi" \
+  "$private_root/incoming/lms" \
+  "$private_root/incoming/financial-aid" \
+  "$private_root/incoming/loans" \
+  "$private_root/incoming/scholarships" \
+  "$private_root/incoming/university-account" \
+  "$private_root/incoming/transfer-credit" \
+  "$private_root/incoming/advisor-records" \
+  "$private_root/incoming/other" \
   "$private_root/originals" \
   "$private_root/normalized" \
   "$private_root/quarantine" \
@@ -52,9 +64,17 @@ MCP Codespace bootstrap complete.
 Private artifact vault: $private_root
 Working branch: $branch
 
-Drop source files into:
-  $private_root/incoming
+Drop source files under:
+  $repo_root/.mcp-data/incoming/
 
-Then ingest with:
-  bash scripts/intake-artifact.sh <file> <type> [issuer] [effective-date]
+Preferred typed folders:
+  transcripts/ degree-audits/ registration/ syllabi/ lms/
+  financial-aid/ loans/ scholarships/ university-account/
+  transfer-credit/ advisor-records/ other/
+
+Then scan all dropped files with:
+  python scripts/intake-dropbox.py
+
+Dates are reconciled from source evidence and metadata. Ingestion time is recorded
+separately and is never substituted for a document/effective date.
 EOF
