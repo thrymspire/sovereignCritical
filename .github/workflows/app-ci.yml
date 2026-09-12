@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - project-owners/master-critical-path-v1
+      - project-owners/master-critical-path-codespace
     paths:
       - "app/**"
       - ".github/workflows/app-ci.yml"
