@@ -77,10 +77,34 @@ clean_tree() {
   [[ -z "$(git status --porcelain)" ]]
 }
 
+intake_selftest() {
+  local tmp manifest count
+  tmp="$(mktemp -d)"
+  printf 'mcp-intake-selftest\n' > "$tmp/fixture.txt"
+
+  MCP_PRIVATE_DATA="$tmp/vault" bash scripts/intake-artifact.sh \
+    "$tmp/fixture.txt" self-test "MCP CI" 2026-09-12 >/dev/null
+  MCP_PRIVATE_DATA="$tmp/vault" bash scripts/intake-artifact.sh \
+    "$tmp/fixture.txt" self-test "MCP CI" 2026-09-12 >/dev/null
+
+  manifest="$tmp/vault/manifest/artifacts.jsonl"
+  count="$(grep -cve '^[[:space:]]*$' "$manifest" || true)"
+  if [[ "$count" -ne 1 ]]; then
+    echo "Expected one idempotent manifest entry, found $count"
+    rm -rf "$tmp"
+    return 1
+  fi
+
+  rm -rf "$tmp"
+  return 0
+}
+
 check "working branch guard" branch_guard
 check "no whitespace errors" git diff --check HEAD
 check "private source artifacts excluded from Git" no_private_artifacts_tracked
 check "required repository contracts present" required_repo_contracts
+check "data readiness tool compiles" python -m py_compile scripts/data-readiness.py
+check "artifact intake is idempotent" intake_selftest
 
 if command -v shellcheck >/dev/null 2>&1; then
   check "shell scripts pass shellcheck" shellcheck scripts/codespace-bootstrap.sh scripts/codespace-status.sh scripts/install-git-hooks.sh scripts/live-audit.sh scripts/intake-artifact.sh
