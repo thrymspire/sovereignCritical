@@ -5,6 +5,18 @@ venv/
 __pycache__/
 *.py[cod]
 *$py.class
+node_modules/
+app/node_modules/
+app/dist/
+app/src-tauri/target/
+
+# MCP private workstation state and evidence. Never commit source artifacts.
+.mcp-data
+.mcp-data/
+.mcp-audit/
+.mcp-private/
+private-artifacts/
+artifact-vault/
 
 # Temporary and local IDE artifacts
 .idea/
