@@ -59,4 +59,4 @@ jobs:
           cargo --version
 
       - name: Check Tauri shell
-        run: cargo check --manifest-path app/src-tauri/Cargo.toml --locked=false
+        run: cargo check --manifest-path app/src-tauri/Cargo.toml
