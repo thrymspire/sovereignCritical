@@ -1,0 +1,68 @@
+name: Ontology CI
+
+on:
+  push:
+    branches:
+      - project-owners/master-critical-path-v1
+  pull_request:
+    paths:
+      - "gantt_ontology/**"
+      - "data/gantt_ontology.json"
+      - "bridge/schema_to_ui.py"
+      - ".github/workflows/ontology-ci.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: gantt_ontology
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: gantt_ontology/pyproject.toml
+
+      - name: Install package and test dependencies
+        run: python -m pip install -e ".[dev]"
+
+      - name: Run ontology tests
+        run: pytest -q
+
+      - name: Validate legacy canonical document strictly
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from gantt_ontology import GanttOntology
+
+          path = Path("../data/gantt_ontology.json")
+          document = json.loads(path.read_text(encoding="utf-8"))
+          GanttOntology.model_validate(document)
+          print("Legacy canonical document validates strictly.")
+          PY
+
+      - name: Generate provenance-first MCP JSON Schema
+        run: python tools/export_mcp_schema.py
+
+      - name: Validate exported JSON Schema syntax
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from jsonschema import Draft202012Validator
+
+          path = Path("schema/mcp_domain_schema.json")
+          schema = json.loads(path.read_text(encoding="utf-8"))
+          Draft202012Validator.check_schema(schema)
+          print("MCP domain JSON Schema is valid Draft 2020-12 JSON Schema.")
+          PY
