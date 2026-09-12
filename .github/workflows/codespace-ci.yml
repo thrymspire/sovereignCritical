@@ -1,0 +1,42 @@
+name: Codespace Workstation CI
+
+on:
+  push:
+    branches:
+      - project-owners/master-critical-path-codespace
+    paths:
+      - ".devcontainer/**"
+      - "scripts/**"
+      - ".gitignore"
+      - "app/package.json"
+      - "app/src-tauri/Cargo.toml"
+      - "gantt_ontology/pyproject.toml"
+      - ".github/workflows/codespace-ci.yml"
+  pull_request:
+    paths:
+      - ".devcontainer/**"
+      - "scripts/**"
+      - ".gitignore"
+      - "app/package.json"
+      - "app/src-tauri/Cargo.toml"
+      - "gantt_ontology/pyproject.toml"
+      - ".github/workflows/codespace-ci.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-workstation:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Build and exercise MCP dev container
+        uses: devcontainers/ci@v0.3
+        with:
+          configFile: .devcontainer/devcontainer.json
+          push: never
+          runCmd: bash scripts/codespace-status.sh && bash scripts/live-audit.sh --ci
