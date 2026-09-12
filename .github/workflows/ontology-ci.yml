@@ -4,6 +4,11 @@ on:
   push:
     branches:
       - project-owners/master-critical-path-v1
+    paths:
+      - "gantt_ontology/**"
+      - "data/gantt_ontology.json"
+      - "bridge/schema_to_ui.py"
+      - ".github/workflows/ontology-ci.yml"
   pull_request:
     paths:
       - "gantt_ontology/**"
