@@ -11,6 +11,10 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: mcp-live-audit-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   repository-audit:
     runs-on: ubuntu-latest
