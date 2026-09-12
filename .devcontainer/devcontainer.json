@@ -1,0 +1,52 @@
+{
+  "name": "Master Critical Path Audit Workstation",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "24"
+    },
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.12"
+    },
+    "ghcr.io/devcontainers/features/rust:1": {
+      "version": "stable",
+      "profile": "minimal"
+    },
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+  "hostRequirements": {
+    "cpus": 4,
+    "memory": "8gb",
+    "storage": "32gb"
+  },
+  "remoteEnv": {
+    "MCP_PRIVATE_DATA": "/workspaces/.mcp-private/sovereignCritical",
+    "MCP_AUDIT_DIR": "/workspaces/.mcp-private/sovereignCritical/audit",
+    "MCP_WORKING_BRANCH": "project-owners/master-critical-path-codespace"
+  },
+  "postCreateCommand": "bash scripts/codespace-bootstrap.sh",
+  "postAttachCommand": "bash scripts/codespace-status.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "charliermarsh.ruff",
+        "rust-lang.rust-analyzer",
+        "tamasfe.even-better-toml",
+        "redhat.vscode-yaml",
+        "dbaeumer.vscode-eslint",
+        "eamodio.gitlens"
+      ],
+      "settings": {
+        "editor.formatOnSave": true,
+        "files.exclude": {
+          ".mcp-data": true
+        },
+        "terminal.integrated.defaultProfile.linux": "bash"
+      }
+    }
+  }
+}
